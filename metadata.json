@@ -1,0 +1,8 @@
+{
+  "name": "Tripolla",
+  "description": "Offline-ready travel planner for any country or city — itineraries, route maps, flights, multi-currency expense splitting, photo gallery, and packing checklists.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,0 +1,79 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "DM Sans", system-ui, -apple-system, sans-serif;
+  --font-display: "Plus Jakarta Sans", "DM Sans", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-brand-50: #eefbfa;
+  --color-brand-100: #d4f3f1;
+  --color-brand-200: #ade7e3;
+  --color-brand-400: #2cc0bd;
+  --color-brand-500: #149b99;
+  --color-brand-600: #0e7c7b;
+  --color-brand-700: #0d6363;
+  --color-brand-900: #0f3d3e;
+
+  --color-sand-50: #faf8f4;
+  --color-sand-100: #f3efe6;
+  --color-sand-200: #e5dfd1;
+  --color-sand-800: #272520;
+  --color-sand-900: #181714;
+}
+
+:root {
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --page-bg: #faf8f4;
+}
+
+.dark {
+  --page-bg: #0f1616;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: var(--font-sans);
+  padding-top: var(--safe-top);
+  overscroll-behavior-y: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.ticket-divider {
+  position: relative;
+  border-top: 2px dashed rgba(148, 163, 184, 0.35);
+}
+.ticket-divider::before,
+.ticket-divider::after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  width: 20px;
+  height: 20px;
+  border-radius: 9999px;
+  background-color: var(--page-bg, #faf8f4);
+}
+.ticket-divider::before {
+  left: -26px;
+}
+.ticket-divider::after {
+  right: -26px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

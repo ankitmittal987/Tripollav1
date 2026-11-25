@@ -1,0 +1,52 @@
+{
+  "id": "/",
+  "name": "Tripolla · Universal Trip Planner",
+  "short_name": "Tripolla",
+  "description": "Offline-ready travel planner for any country or city — itineraries, route maps, flights, multi-currency expense splitter, photo gallery, and checklists.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#0e7c7b",
+  "background_color": "#faf8f4",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": ["travel", "navigation", "productivity"],
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "/pwa-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-maskable-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshot-mobile.png",
+      "sizes": "720x1280",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Tripolla mobile countdown, itinerary, and offline route map"
+    },
+    {
+      "src": "/screenshot-desktop.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Tripolla desktop trip planner, hotel stays, and offline map"
+    }
+  ]
+}

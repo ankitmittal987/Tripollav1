@@ -1,0 +1,1614 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover" />
+  <meta name="theme-color" content="#0e7c7b" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <title>Sri Lanka Trip · Ankit, Jeenat, Laxit & Sayali</title>
+
+  <!-- Google Fonts: Plus Jakarta Sans & Inter for Android Material 3 typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+            display: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#eefbfa',
+              100: '#d4f3f1',
+              200: '#ade7e3',
+              500: '#149b99',
+              600: '#0e7c7b',
+              700: '#0d6363',
+              900: '#0f3d3e',
+            },
+            sand: {
+              50: '#faf8f4',
+              100: '#f3efe6',
+              200: '#e5dfd1',
+              800: '#272520',
+              900: '#181714',
+            }
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    /* Material You & Mobile App Shell Refinements */
+    :root {
+      --safe-top: env(safe-area-inset-top, 0px);
+      --safe-bottom: env(safe-area-inset-bottom, 0px);
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      padding-top: var(--safe-top);
+      padding-bottom: calc(84px + var(--safe-bottom));
+      overscroll-behavior-y: none;
+    }
+
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    .tap-scale {
+      transition: transform 0.14s cubic-bezier(0.2, 0, 0, 1), background-color 0.15s ease;
+    }
+    .tap-scale:active {
+      transform: scale(0.97);
+    }
+
+    .ticket-divider {
+      position: relative;
+      border-top: 2px dashed rgba(148, 163, 184, 0.35);
+    }
+    .ticket-divider::before,
+    .ticket-divider::after {
+      content: '';
+      position: absolute;
+      top: -10px;
+      width: 20px;
+      height: 20px;
+      border-radius: 9999px;
+      background-color: var(--page-bg, #faf8f4);
+    }
+    .ticket-divider::before {
+      left: -26px;
+    }
+    .ticket-divider::after {
+      right: -26px;
+    }
+
+    @keyframes slideUpFade {
+      from { opacity: 0; transform: translate(-50%, 16px); }
+      to { opacity: 1; transform: translate(-50%, 0); }
+    }
+    .toast-enter {
+      animation: slideUpFade 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+  </style>
+</head>
+<body class="bg-sand-50 text-slate-900 dark:bg-[#101616] dark:text-slate-100 font-sans antialiased selection:bg-brand-600 selection:text-white">
+
+  <!-- Sticky Android Top App Bar -->
+  <header class="sticky top-0 z-30 bg-sand-50/90 dark:bg-[#101616]/90 backdrop-blur-md border-b border-sand-200/80 dark:border-slate-800/80">
+    <div class="max-w-lg mx-auto px-4 py-3 flex items-center justify-between gap-2">
+      <div class="flex items-center gap-2.5 min-w-0">
+        <div class="w-10 h-10 rounded-2xl bg-brand-600 text-white flex items-center justify-center shadow-sm shadow-brand-600/25 shrink-0">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M13 8c0-2.76-2.46-5-5.5-5S2 5.24 2 8h2l1-1 1 1h4"/>
+            <path d="M13 7.14A5.82 5.82 0 0 1 16.5 6c3.04 0 5.5 2.24 5.5 5h-3l-1-1-1 1h-3"/>
+            <path d="M5.89 9.71c-2.15 2.15-2.3 5.47-.35 7.43l4.24-4.25.7-.7.71-.71 2.12-2.12c-1.95-1.96-5.27-1.8-7.42.35"/>
+            <path d="M11 15.5c.5 2.5-.17 4.5-1 6.5h4c2-5.5-.5-12-1-14"/>
+          </svg>
+        </div>
+        <div class="truncate">
+          <div class="flex items-center gap-1.5">
+            <h1 class="font-display font-extrabold text-base sm:text-lg tracking-tight truncate">Sri Lanka Trip</h1>
+            <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-brand-100 text-brand-700 dark:bg-brand-900/60 dark:text-brand-200">12–17 Dec</span>
+          </div>
+          <p class="text-[11px] text-slate-500 dark:text-slate-400 truncate">Ankit & Jeenat · Laxit & Sayali</p>
+        </div>
+      </div>
+
+      <!-- Theme Switcher Pill -->
+      <button id="themeBtn" type="button" aria-label="Toggle theme" class="tap-scale flex items-center gap-1.5 px-3 py-2 rounded-full bg-white dark:bg-slate-800/90 border border-sand-200 dark:border-slate-700 text-xs font-semibold text-slate-700 dark:text-slate-200 shadow-xs shrink-0">
+        <span id="themeIcon"></span>
+        <span id="themeLabel">Auto</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Scrollable Viewport -->
+  <main id="app" class="max-w-lg mx-auto px-4 pt-3 pb-6"></main>
+
+  <!-- Floating Toast Notification -->
+  <div id="toast" class="fixed bottom-24 left-1/2 -translate-x-1/2 z-50 hidden pointer-events-none">
+    <div id="toastMsg" class="toast-enter bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 text-xs font-semibold px-4 py-2.5 rounded-full shadow-lg flex items-center gap-2 whitespace-nowrap"></div>
+  </div>
+
+  <!-- Android Material 3 Bottom Navigation Bar -->
+  <nav aria-label="Primary Navigation" class="fixed bottom-0 inset-x-0 z-40 bg-white/95 dark:bg-[#161f1f]/95 backdrop-blur-md border-t border-sand-200 dark:border-slate-800" style="padding-bottom: var(--safe-bottom);">
+    <div class="max-w-lg mx-auto grid grid-cols-4 h-16 px-2">
+      <button type="button" data-tab="plan" class="nav-btn group flex flex-col items-center justify-center gap-1 text-slate-500 dark:text-slate-400 focus:outline-none">
+        <div class="nav-pill px-4 py-1 rounded-full transition-colors">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/></svg>
+        </div>
+        <span class="text-[11px] font-semibold tracking-tight">Itinerary</span>
+      </button>
+
+      <button type="button" data-tab="fly" class="nav-btn group flex flex-col items-center justify-center gap-1 text-slate-500 dark:text-slate-400 focus:outline-none">
+        <div class="nav-pill px-4 py-1 rounded-full transition-colors">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>
+        </div>
+        <span class="text-[11px] font-semibold tracking-tight">Flights</span>
+      </button>
+
+      <button type="button" data-tab="money" class="nav-btn group flex flex-col items-center justify-center gap-1 text-slate-500 dark:text-slate-400 focus:outline-none">
+        <div class="nav-pill px-4 py-1 rounded-full transition-colors">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+        </div>
+        <span class="text-[11px] font-semibold tracking-tight">Expenses</span>
+      </button>
+
+      <button type="button" data-tab="tools" class="nav-btn group flex flex-col items-center justify-center gap-1 text-slate-500 dark:text-slate-400 focus:outline-none">
+        <div class="nav-pill px-4 py-1 rounded-full transition-colors">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        </div>
+        <span class="text-[11px] font-semibold tracking-tight">Checklist</span>
+      </button>
+    </div>
+  </nav>
+
+  <script>
+    /**
+     * =========================================================================
+     * COMPREHENSIVE 6-DAY SRI LANKA ITINERARY & VENUES DATABASE
+     * Each item has:
+     * - id: unique identifier for shortlist checkbox persistence
+     * - name: venue/stop title
+     * - query: exact offline Google Maps search query
+     * - lat, lng: GPS coordinates for offline SVG map & routing
+     * - desc: details, specialties, timing tips
+     * - type: 'v' (Visit) | 'f' (Eat) | 's' (Sunset) | 'p' (Night/Pub) | 'b' (Base/Transfer)
+     * - diet: 'veg' (100% Veg/Vegan) | 'both' (Veg + Famous Non-Veg/Seafood) | 'none'
+     * - tier: 'core' (Main Route Stop) | 'alt_food' (Alternate Famous Restaurant/Cafe) | 'alt_party' (Famous Nightlife/Party Pub)
+     * - defaultPick: true for core itinerary items, false for alternates to shortlist
+     * =========================================================================
+     */
+    const SOMAR = "Somar Ahangama Sri Lanka";
+    const AIRPORT = "Bandaranaike International Airport Colombo";
+
+    const DAYS_DATA = [
+      {
+        code: "D1 · 12 Dec",
+        shortDate: "Sat 12",
+        title: "Day 1 · Sat 12 Dec",
+        summary: "Airport straight to Somar, sunset & Saturday night beach bars",
+        legs: [[145, 225], [2, 6], [3, 8], [2, 6]],
+        items: [
+          // Core Itinerary
+          { id: "d1_1", name: "Colombo Airport (CMB)", query: AIRPORT, lat: 7.18, lng: 79.884, desc: "Land ~9:00am (6E 1185), drive straight to Somar via Southern Expressway", type: "b", diet: "none", tier: "core", defaultPick: true },
+          { id: "d1_2", name: "Somar Ahangama + Veda Café Lunch", query: SOMAR, lat: 5.968, lng: 80.364, desc: "Check-in ~1pm. Lunch right next door at Veda Café (famous veg rice & curry buffet)", type: "b", diet: "veg", tier: "core", defaultPick: true },
+          { id: "d1_3", name: "Kabalana Beach (The Rock)", query: "Kabalana Beach Ahangama", lat: 5.973, lng: 80.352, desc: "Golden sunset on the surf beach (~6pm)", type: "s", diet: "none", tier: "core", defaultPick: true },
+          { id: "d1_4", name: "TIFFINS The Dosa Kade", query: "TIFFINS The Dosa Kade Ahangama", lat: 5.969, lng: 80.368, desc: "Authentic South Indian vegetarian dosas, idlis & thali dinner", type: "f", diet: "veg", tier: "core", defaultPick: true },
+          { id: "d1_5", name: "Ahangama Beach Bars", query: "Ahangama Beach Sri Lanka", lat: 5.971, lng: 80.357, desc: "Easy first-night drinks near Somar; check out the Saturday party options below", type: "p", diet: "none", tier: "core", defaultPick: true },
+
+          // Alternate Famous Restaurants & Cafes (Day 1)
+          { id: "d1_f1", name: "The Kip", query: "The Kip Ahangama", lat: 5.9675, lng: 80.366, desc: "Iconic lush tropical garden cafe — smoothie bowls, sourdough, great veg & brunch", type: "f", diet: "veg", tier: "alt_food", defaultPick: false },
+          { id: "d1_f2", name: "Cactus Ahangama", query: "Cactus Ahangama", lat: 5.9688, lng: 80.3652, desc: "Trendy coastal cafe famous for tacos, poke bowls, smoothies & coffee", type: "f", diet: "both", tier: "alt_food", defaultPick: false },
+          { id: "d1_f3", name: "Maru", query: "Maru Ahangama", lat: 5.9702, lng: 80.3615, desc: "Famous Japanese & fresh seafood spot in Ahangama (tuna tataki, ramen, veg rolls)", type: "f", diet: "both", tier: "alt_food", defaultPick: false },
+          { id: "d1_f4", name: "East Falafel", query: "East Falafel Ahangama", lat: 5.9685, lng: 80.3672, desc: "Top-rated Middle Eastern falafel wraps, hummus platters & mezze", type: "f", diet: "veg", tier: "alt_food", defaultPick: false },
+          { id: "d1_f5", name: "Kurumba Bay", query: "Kurumba Bay Ahangama", lat: 5.9722, lng: 80.3545, desc: "Beachfront Sri Lankan seafood curries, grilled prawns & cocktails", type: "f", diet: "both", tier: "alt_food", defaultPick: false },
+
+          // Famous Saturday Night Party Pubs & Clubs (Day 1)
+          { id: "d1_p1", name: "Trax Ahangama (Saturday Night Party)", query: "Trax Ahangama", lat: 5.9705, lng: 80.3635, desc: "THE most famous Saturday night open-air jungle party in Ahangama — techno, house & live DJs", type: "p", diet: "none", tier: "alt_party", defaultPick: false },
+          { id: "d1_p2", name: "Swell Ahangama", query: "Swell Ahangama", lat: 5.9718, lng: 80.3562, desc: "Lively beachfront surf pub with live bands, cocktails & late-night crowd", type: "p", diet: "none", tier: "alt_party", defaultPick: false },
+          { id: "d1_p3", name: "Kabalana Beach Club", query: "Kabalana Beach Club Ahangama", lat: 5.9735, lng: 80.3515, desc: "Sunset-to-night beach lounge with DJ sets and craft cocktails", type: "p", diet: "none", tier: "alt_party", defaultPick: false },
+          { id: "d1_p4", name: "Lunu Mirisa", query: "Lunu Mirisa Ahangama", lat: 5.9695, lng: 80.3642, desc: "Popular rooftop/garden bar & Sri Lankan tapas spot with weekend music", type: "p", diet: "both", tier: "alt_party", defaultPick: false }
+        ]
+      },
+      {
+        code: "D2 · 13 Dec",
+        shortDate: "Sun 13",
+        title: "Day 2 · Sun 13 Dec",
+        summary: "Peace Pagoda, palm rope swing, Galle Fort & Sunday beach parties",
+        legs: [[28, 35], [4, 10], [7, 20], [1, 6], [1, 5], [1, 5], [26, 40]],
+        items: [
+          // Core Itinerary
+          { id: "d2_1", name: "Somar Ahangama (Depart 8:00am)", query: SOMAR, lat: 5.968, lng: 80.364, desc: "Leave early at 8:00am heading west toward Unawatuna & Galle", type: "b", diet: "none", tier: "core", defaultPick: true },
+          { id: "d2_2", name: "Japanese Peace Pagoda", query: "Japanese Peace Pagoda Unawatuna", lat: 6.0142, lng: 80.2425, desc: "Morning hilltop stupa climb, shoes off, panoramic Unawatuna & Galle bay views", type: "v", diet: "none", tier: "core", defaultPick: true },
+          { id: "d2_3", name: "Dalawella Beach Palm Rope Swing", query: "Dalawella Beach Palm Tree Swing Unawatuna", lat: 6.007, lng: 80.261, desc: "Iconic ocean rope swing at Dream Cabana — go early to beat queues", type: "v", diet: "none", tier: "core", defaultPick: true },
+          { id: "d2_4", name: "Galle Fort & Pedlar’s Inn Café", query: "Pedlars Inn Cafe Galle Fort", lat: 6.0267, lng: 80.217, desc: "Lunch at Pedlar’s Inn Café. Explore Dutch colonial streets, Laksala & boutiques", type: "v", diet: "both", tier: "core", defaultPick: true },
+          { id: "d2_5", name: "Galle Lighthouse & Ramparts", query: "Galle Lighthouse", lat: 6.0243, lng: 80.2158, desc: "Golden hour walk along the Fort walls — arrive by 5:15pm for sunset", type: "s", diet: "none", tier: "core", defaultPick: true },
+          { id: "d2_6", name: "The Fort Printers", query: "The Fort Printers Galle Fort", lat: 6.0265, lng: 80.217, desc: "Upscale courtyard dinner inside a heritage mansion — wood-fired pizzas, seafood & veg dishes", type: "f", diet: "both", tier: "core", defaultPick: true },
+          { id: "d2_7", name: "Ropewalk (Galle Fort Hotel)", query: "Ropewalk Galle Fort Hotel", lat: 6.0278, lng: 80.2171, desc: "Sri Lanka’s first arrack-specialty cocktail bar with tapas & great vibe", type: "p", diet: "none", tier: "core", defaultPick: true },
+          { id: "d2_8", name: "Return to Somar Ahangama", query: SOMAR, lat: 5.968, lng: 80.364, desc: "Licensed taxi back along coast (~40 min)", type: "b", diet: "none", tier: "core", defaultPick: true },
+
+          // Alternate Famous Restaurants & Cafes (Day 2)
+          { id: "d2_f1", name: "A Minute by Tuk Tuk", query: "A Minute by Tuk Tuk Galle Fort", lat: 6.0258, lng: 80.2185, desc: "Famous Dutch Hospital ocean-facing restaurant — crab curry, seafood platters & cocktails", type: "f", diet: "both", tier: "alt_food", defaultPick: false },
+          { id: "d2_f2", name: "Chambers Restaurant", query: "Chambers Restaurant Galle Fort", lat: 6.0272, lng: 80.2165, desc: "Iconic Moroccan & Middle Eastern dining inside Galle Fort (amazing tagines & mezze)", type: "f", diet: "both", tier: "alt_food", defaultPick: false },
+          { id: "d2_f3", name: "Coconut Sambol", query: "Coconut Sambol Galle Fort", lat: 6.0262, lng: 80.2162, desc: "Beloved family-run spot for authentic home-style Sri Lankan rice & curry buffet", type: "f", diet: "both", tier: "alt_food", defaultPick: false },
+          { id: "d2_f4", name: "Poonie's Kitchen", query: "Poonies Kitchen Galle Fort", lat: 6.0275, lng: 80.2175, desc: "Hidden courtyard cafe famous for colourful salad thali bowls & iced teas", type: "f", diet: "veg", tier: "alt_food", defaultPick: false },
+          { id: "d2_f5", name: "Wijeya Beach Restaurant", query: "Wijeya Beach Restaurant Unawatuna", lat: 6.0065, lng: 80.262, desc: "Right next to Dalawella swing — legendary wood-fired pizzas & grilled seafood on the beach", type: "f", diet: "both", tier: "alt_food", defaultPick: false },
+          { id: "d2_f6", name: "Isle of Gelato", query: "Isle of Gelato Galle Fort", lat: 6.0268, lng: 80.2173, desc: "Must-try artisanal gelato in Galle Fort (passionfruit, pistachio, salted caramel)", type: "f", diet: "veg", tier: "alt_food", defaultPick: false },
+
+          // Famous Sunday Night Party Pubs & Bars (Day 2)
+          { id: "d2_p1", name: "Taphouse by R&B (Dutch Hospital)", query: "Taphouse by R&B Galle Fort", lat: 6.0256, lng: 80.2188, desc: "Lively pub in the Old Dutch Hospital courtyard with live bands, draught beer & cocktails", type: "p", diet: "none", tier: "alt_party", defaultPick: false },
+          { id: "d2_p2", name: "Charlie’s Bar & Bistro", query: "Charlies Bar Galle Fort", lat: 6.0271, lng: 80.2168, desc: "Cozy Galle Fort cocktail bar with indie playlists & late-night drinks", type: "p", diet: "none", tier: "alt_party", defaultPick: false },
+          { id: "d2_p3", name: "Kingfisher Unawatuna (Sunday Beach Party)", query: "Kingfisher Unawatuna", lat: 6.0095, lng: 80.2485, desc: "Famous Unawatuna beach club & restaurant hosting energetic Sunday night DJ beach parties", type: "p", diet: "both", tier: "alt_party", defaultPick: false },
+          { id: "d2_p4", name: "Happy Banana Unawatuna", query: "Happy Banana Unawatuna", lat: 6.0092, lng: 80.2492, desc: "Iconic sand-floor beach party bar with fire shows, DJs & dancing right by the waves", type: "p", diet: "none", tier: "alt_party", defaultPick: false }
+        ]
+      },
+      {
+        code: "D3 · 14 Dec",
+        shortDate: "Mon 14",
+        title: "Day 3 · Mon 14 Dec",
+        summary: "Koggala Lake, White Tea Estate, painted temple & Monday beach parties",
+        legs: [[9, 15], [6, 12], [10, 18], [4, 10], [5, 12], [6, 12], [6, 12]],
+        items: [
+          // Core Itinerary
+          { id: "d3_1", name: "Somar Ahangama (Depart 9:00am)", query: SOMAR, lat: 5.968, lng: 80.364, desc: "Relaxed 9:00am start for inland lake & tea plantations", type: "b", diet: "none", tier: "core", defaultPick: true },
+          { id: "d3_2", name: "Koggala Lake Boat Safari", query: "Koggala Lake boat ride Sri Lanka", lat: 5.995, lng: 80.32, desc: "Scenic boat ride visiting Cinnamon Island, bird sanctuaries & spice garden", type: "v", diet: "none", tier: "core", defaultPick: true },
+          { id: "d3_3", name: "Handunugoda Tea Estate", query: "Handunugoda Tea Estate Koggala", lat: 5.985, lng: 80.305, desc: "Home of world-famous Virgin White Tea — guided factory tour, tea tasting & coconut oil", type: "v", diet: "none", tier: "core", defaultPick: true },
+          { id: "d3_4", name: "Kathaluwa Purvarama Temple", query: "Kathaluwa Purvarama Maha Viharaya Ahangama", lat: 5.97, lng: 80.38, desc: "Historic 19th-century Buddhist temple with rare Kandyan & European-style murals", type: "v", diet: "none", tier: "core", defaultPick: true },
+          { id: "d3_5", name: "Matara Road Cafes (The Kip / Fruit Café / Sliders)", query: "Fruit Cafe Ahangama", lat: 5.968, lng: 80.364, desc: "Lunch at The Kip (veg), then cafe-hop Matara Rd: Cactus, Fruit Café (vegan) & Ceylon Sliders", type: "f", diet: "veg", tier: "core", defaultPick: true },
+          { id: "d3_6", name: "Midigama Beach Sunset", query: "Midigama Beach", lat: 5.964, lng: 80.398, desc: "Sunset (~6pm) watching surfers at Lazy Left & Rams surf breaks", type: "s", diet: "none", tier: "core", defaultPick: true },
+          { id: "d3_7", name: "Maria Bonita Ahangama", query: "Maria Bonita Ahangama", lat: 5.968, lng: 80.368, desc: "Vibrant Mexican & vegetarian/vegan tacos, burritos, nachos & margaritas", type: "f", diet: "both", tier: "core", defaultPick: true },
+          { id: "d3_8", name: "Ahangama–Midigama Night Bars", query: "Midigama Beach Sri Lanka", lat: 5.966, lng: 80.39, desc: "Monday night surf-town drinks; pick from the famous Monday party spots below", type: "p", diet: "none", tier: "core", defaultPick: true },
+
+          // Alternate Famous Restaurants & Cafes (Day 3)
+          { id: "d3_f1", name: "Follow The White Rabbit", query: "Follow The White Rabbit Midigama", lat: 5.9645, lng: 80.3965, desc: "Iconic Midigama beachfront hangout — burgers, seafood grill, cold beers & sunset view", type: "f", diet: "both", tier: "alt_food", defaultPick: false },
+          { id: "d3_f2", name: "Soul & Surf Rooftop Cafe", query: "Soul and Surf Sri Lanka Ahangama", lat: 5.9665, lng: 80.385, desc: "Cliff-top ocean-view cafe famous for wood-fired pizzas, healthy bowls & sunset acoustics", type: "f", diet: "both", tier: "alt_food", defaultPick: false },
+          { id: "d3_f3", name: "Black Honey Cafe", query: "Black Honey Cafe Ahangama", lat: 5.976, lng: 80.369, desc: "Hidden jungle-chic cafe in the paddy fields — specialty coffee, shakshuka & brunch", type: "f", diet: "both", tier: "alt_food", defaultPick: false },
+          { id: "d3_f4", name: "Crust Ahangama", query: "Crust Ahangama", lat: 5.9692, lng: 80.3655, desc: "Famous artisan sourdough wood-fired pizzeria with great vegetarian & meat toppings", type: "f", diet: "both", tier: "alt_food", defaultPick: false },
+
+          // Famous Monday Night Party Pubs & Bars (Day 3)
+          { id: "d3_p1", name: "Cheeky Monkey Midigama (Monday Night Party)", query: "Cheeky Monkey Midigama", lat: 5.9638, lng: 80.399, desc: "THE legendary Midigama surfer bar — packed Monday night DJ sessions, pool table & cheap cocktails", type: "p", diet: "none", tier: "alt_party", defaultPick: false },
+          { id: "d3_p2", name: "The Doctor's House (Madiha)", query: "The Doctors House Madiha", lat: 5.9395, lng: 80.518, desc: "Iconic 200-year-old converted Dutch hospital beach bar (~20m east) — huge open-air garden parties & live music", type: "p", diet: "both", tier: "alt_party", defaultPick: false },
+          { id: "d3_p3", name: "La Luna Midigama", query: "La Luna Midigama", lat: 5.9642, lng: 80.3972, desc: "Chilled beachfront cocktail & pizza bar with acoustic sets & late drinks", type: "p", diet: "both", tier: "alt_party", defaultPick: false },
+          { id: "d3_p4", name: "Mello Hostel Bar", query: "Mello Hostel Ahangama", lat: 5.9672, lng: 80.376, desc: "Social backpacker/surfer bar with rooftop sunset sessions & beer pong", type: "p", diet: "none", tier: "alt_party", defaultPick: false }
+        ]
+      },
+      {
+        code: "D4 · 15 Dec",
+        shortDate: "Tue 15",
+        title: "Day 4 · Tue 15 Dec",
+        summary: "Weligama cafes, Coconut Tree Hill, Mirissa sunset & Tuesday nightlife",
+        legs: [[16, 25], [7, 15], [1, 5], [6, 12], [1, 3], [16, 25]],
+        items: [
+          // Core Itinerary
+          { id: "d4_1", name: "Somar Ahangama (Depart 9:30am)", query: SOMAR, lat: 5.968, lng: 80.364, desc: "Leave 9:30am heading east to Weligama & Mirissa", type: "b", diet: "none", tier: "core", defaultPick: true },
+          { id: "d4_2", name: "Nomad Café & Boutique, Weligama", query: "Nomad Cafe Boutique Weligama", lat: 5.974, lng: 80.43, desc: "100% vegetarian/vegan brunch (avo toast, smoothie bowls). Nearby: Plan B & Moochie’s", type: "f", diet: "veg", tier: "core", defaultPick: true },
+          { id: "d4_3", name: "Coconut Tree Hill, Mirissa", query: "Coconut Tree Hill Mirissa", lat: 5.94, lng: 80.463, desc: "Famous red-cliff palm grove overlooking the turquoise bay + Mirissa beach time", type: "v", diet: "none", tier: "core", defaultPick: true },
+          { id: "d4_4", name: "Parrot Rock, Mirissa", query: "Parrot Rock Mirissa", lat: 5.943, lng: 80.459, desc: "Walk across the sandbar and climb Parrot Rock for 5:45pm sunset", type: "s", diet: "none", tier: "core", defaultPick: true },
+          { id: "d4_5", name: "Ceylon Sliders, Weligama", query: "Ceylon Sliders Weligama", lat: 5.973, lng: 80.428, desc: "Dinner: falafel bowls, vegan rainbow bowls, gourmet burgers & fresh fish", type: "f", diet: "both", tier: "core", defaultPick: true },
+          { id: "d4_6", name: "Locale Weligama / Zephyr Mirissa", query: "Locale Weligama", lat: 5.972, lng: 80.427, desc: "Gastro bar (happy hour 5–7pm) or stay in Mirissa at Zephyr for beachfront party vibes", type: "p", diet: "none", tier: "core", defaultPick: true },
+          { id: "d4_7", name: "Return to Somar Ahangama", query: SOMAR, lat: 5.968, lng: 80.364, desc: "Taxi back ~25 min", type: "b", diet: "none", tier: "core", defaultPick: true },
+
+          // Alternate Famous Restaurants & Cafes (Day 4)
+          { id: "d4_f1", name: "No. 1 Dewmini Roti Shop", query: "No 1 Dewmini Roti Shop Mirissa", lat: 5.9465, lng: 80.4565, desc: "World-famous Mirissa institution for Sri Lankan cheese-avocado rotis, kottu & chocolate rotis", type: "f", diet: "both", tier: "alt_food", defaultPick: false },
+          { id: "d4_f2", name: "Shady Lane Mirissa", query: "Shady Lane Mirissa", lat: 5.948, lng: 80.454, desc: "Instagram-famous brunch cafe tucked in palms — smoothie bowls, bagels & iced lattes", type: "f", diet: "veg", tier: "alt_food", defaultPick: false },
+          { id: "d4_f3", name: "Petti Petti Mirissa", query: "Petti Petti Mirissa", lat: 5.9415, lng: 80.461, desc: "Chic beachfront infinity-pool club & restaurant serving Asian fusion, sushi & cocktails", type: "f", diet: "both", tier: "alt_food", defaultPick: false },
+          { id: "d4_f4", name: "Plan B Weligama", query: "Plan B Weligama", lat: 5.9735, lng: 80.429, desc: "Popular Weligama cafe for gourmet burgers, wraps, shakes & vegetarian plates", type: "f", diet: "both", tier: "alt_food", defaultPick: false },
+          { id: "d4_f5", name: "Moochie’s Weligama", query: "Moochies Weligama", lat: 5.9738, lng: 80.4295, desc: "Great brunch & lunch spot known for loaded wraps, smoothie bowls & coffee", type: "f", diet: "both", tier: "alt_food", defaultPick: false },
+
+          // Famous Tuesday Night Party Pubs & Bars (Day 4)
+          { id: "d4_p1", name: "Zephyr Restaurant & Bar (Mirissa)", query: "Zephyr Restaurant and Bar Mirissa", lat: 5.9445, lng: 80.4575, desc: "THE iconic Mirissa beachfront party bar — craft cocktails, DJs & dancing right on the sand", type: "p", diet: "both", tier: "alt_party", defaultPick: false },
+          { id: "d4_p2", name: "Salt Mirissa", query: "Salt Mirissa", lat: 5.945, lng: 80.4568, desc: "Lively beachfront lounge & restaurant with Tuesday night music, shisha & cocktails", type: "p", diet: "both", tier: "alt_party", defaultPick: false },
+          { id: "d4_p3", name: "Tiki Cliff Top Restaurant & Bar", query: "Tiki Cliff Top Restaurant and Bar Weligama", lat: 5.963, lng: 80.424, desc: "Dramatic cliff-edge Tiki bar overlooking Weligama bay — sunset to late-night party", type: "p", diet: "both", tier: "alt_party", defaultPick: false },
+          { id: "d4_p4", name: "Hangtime Rooftop Weligama", query: "Hangtime Hostel Weligama", lat: 5.9715, lng: 80.4265, desc: "Famous surfer rooftop bar across the beach with live acoustic/DJ nights & cold beers", type: "p", diet: "both", tier: "alt_party", defaultPick: false },
+          { id: "d4_p5", name: "Beats & Barrels Weligama", query: "Beats and Barrels Weligama", lat: 5.9725, lng: 80.4275, desc: "Energetic pub with live music, cocktails & party crowd in central Weligama", type: "p", diet: "none", tier: "alt_party", defaultPick: false }
+        ]
+      },
+      {
+        code: "D5 · 16 Dec",
+        shortDate: "Wed 16",
+        title: "Day 5 · Wed 16 Dec",
+        summary: "Expressway to Colombo, shopping, Galle Face sunset & rooftop clubs",
+        legs: [[140, 170], [5, 20], [4, 15], [3, 12], [2, 10]],
+        items: [
+          // Core Itinerary
+          { id: "d5_1", name: "Somar Ahangama (Leave 10:00am)", query: SOMAR, lat: 5.968, lng: 80.364, desc: "Check out & drive ~2h 45m north to Colombo via Southern Expressway", type: "b", diet: "none", tier: "core", defaultPick: true },
+          { id: "d5_2", name: "Pettah Market", query: "Pettah Market Colombo", lat: 6.938, lng: 79.853, desc: "Bustling Colombo bazaar — cheapest wholesale shopping, electronics & spices (haggle!)", type: "v", diet: "none", tier: "core", defaultPick: true },
+          { id: "d5_3", name: "Odel Alexandra Place & Laksala", query: "ODEL Alexandra Place Colombo", lat: 6.9073, lng: 79.8667, desc: "Flagship department store for fashion & souvenirs + Laksala state handicraft emporium", type: "v", diet: "none", tier: "core", defaultPick: true },
+          { id: "d5_4", name: "Galle Face Green Sunset", query: "Galle Face Green Colombo", lat: 6.927, lng: 79.845, desc: "Oceanfront promenade sunset (~6pm) — try crispy prawn/lentil isso wade & kottu", type: "s", diet: "both", tier: "core", defaultPick: true },
+          { id: "d5_5", name: "Barefoot Garden Café", query: "Barefoot Garden Cafe Colombo", lat: 6.914, lng: 79.849, desc: "Iconic courtyard dining & handloom gallery — black pork curry, spinach quiche & veg options", type: "f", diet: "both", tier: "core", defaultPick: true },
+          { id: "d5_6", name: "Botanik Rooftop Bistro & Bar", query: "Botanik Rooftop Bistro Colombo", lat: 6.918, lng: 79.85, desc: "Award-winning Colombo rooftop cocktail lounge & dining with skyline views", type: "p", diet: "both", tier: "core", defaultPick: true },
+
+          // Alternate Famous Restaurants (Day 5)
+          { id: "d5_f1", name: "Ministry of Crab (Dutch Hospital)", query: "Ministry of Crab Colombo", lat: 6.9335, lng: 79.8435, desc: "Asia’s 50 Best Restaurants icon — legendary garlic chilli Sri Lankan mud crab & king prawns (book ahead!)", type: "f", diet: "both", tier: "alt_food", defaultPick: false },
+          { id: "d5_f2", name: "Nuga Gama (Cinnamon Grand)", query: "Nuga Gama Colombo", lat: 6.9178, lng: 79.8485, desc: "Magical open-air banyan tree village serving an authentic clay-pot Sri Lankan buffet & hoppers", type: "f", diet: "both", tier: "alt_food", defaultPick: false },
+          { id: "d5_f3", name: "Upali’s by Nawaloka", query: "Upalis by Nawaloka Colombo", lat: 6.9125, lng: 79.8625, desc: "Colombo’s most famous spot for authentic Sri Lankan curries, pol sambol, hoppers & jaggery dessert", type: "f", diet: "both", tier: "alt_food", defaultPick: false },
+          { id: "d5_f4", name: "Kaema Sutra (Shangri-La)", query: "Kaema Sutra Colombo", lat: 6.9285, lng: 79.8445, desc: "Contemporary Sri Lankan gastronomy & arrack cocktails by Chef Dharshan Munidasa", type: "f", diet: "both", tier: "alt_food", defaultPick: false },
+          { id: "d5_f5", name: "Galle Face Hotel Verandah", query: "The Verandah Galle Face Hotel Colombo", lat: 6.9202, lng: 79.8462, desc: "Historic 1864 colonial oceanfront terrace — iconic for sunset cocktails or high tea", type: "f", diet: "both", tier: "alt_food", defaultPick: false },
+
+          // Famous Wednesday Night Party Pubs & Clubs (Day 5)
+          { id: "d5_p1", name: "CÉ LA VI Colombo (The Kingsbury)", query: "CE LA VI Colombo", lat: 6.9328, lng: 79.8422, desc: "High-energy rooftop lounge & club overlooking the Indian Ocean & Port City — DJs & cocktails", type: "p", diet: "none", tier: "alt_party", defaultPick: false },
+          { id: "d5_p2", name: "W Lounge / Ask for Fern", query: "Ask for Fern Colombo", lat: 6.9165, lng: 79.8515, desc: "Colombo’s coolest hidden speakeasy cocktail bar & late-night lounge", type: "p", diet: "none", tier: "alt_party", defaultPick: false },
+          { id: "d5_p3", name: "ON14 Rooftop Lounge & Bar", query: "ON14 Rooftop Lounge Colombo", lat: 6.9045, lng: 79.852, desc: "Poolside rooftop bar at OZO Colombo with ocean views, DJ sets & Ladies Night Wednesday vibes", type: "p", diet: "none", tier: "alt_party", defaultPick: false },
+          { id: "d5_p4", name: "Cleopatra Nightclub", query: "Cleopatra Nightclub Colombo", lat: 6.9175, lng: 79.8475, desc: "Classic Colombo late-night dance club open into the early hours", type: "p", diet: "none", tier: "alt_party", defaultPick: false },
+          { id: "d5_p5", name: "Playtrix Sports Bar & Cafe", query: "Playtrix Colombo City Centre", lat: 6.9177, lng: 79.855, desc: "Lively pub at Colombo City Centre with live bands, draught beer & pub grub", type: "p", diet: "both", tier: "alt_party", defaultPick: false }
+        ]
+      },
+      {
+        code: "D6 · 17 Dec",
+        shortDate: "Thu 17",
+        title: "Day 6 · Thu 17 Dec",
+        summary: "Colombo temples, last-minute shopping, lunch & evening flight home",
+        legs: [[3, 15], [3, 15], [3, 12], [35, 75]],
+        items: [
+          // Core Itinerary
+          { id: "d6_1", name: "Galle Face (Hotel Area)", query: "Galle Face Green Colombo", lat: 6.927, lng: 79.845, desc: "Update with your Colombo hotel name below", type: "b", diet: "none", tier: "core", defaultPick: true },
+          { id: "d6_2", name: "Gangaramaya Temple & Seema Malaka", query: "Gangaramaya Temple Colombo", lat: 6.9168, lng: 79.8564, desc: "Colombo’s most iconic Buddhist temple complex & Beira Lake meditation pavilion", type: "v", diet: "none", tier: "core", defaultPick: true },
+          { id: "d6_3", name: "Independence Square & Arcade", query: "Independence Memorial Hall Colombo", lat: 6.9025, lng: 79.8683, desc: "Monument walk + last-minute shopping at Odel, Laksala & Arcade boutiques", type: "v", diet: "none", tier: "core", defaultPick: true },
+          { id: "d6_4", name: "Paradise Road The Gallery Café", query: "Paradise Road Gallery Cafe Colombo", lat: 6.906, lng: 79.853, desc: "Former studio of Geoffrey Bawa — iconic black-prawn curry, veg dishes & jaggery crème brûlée", type: "f", diet: "both", tier: "core", defaultPick: true },
+          { id: "d6_5", name: "Colombo Airport (CMB) · Leave ~12:15pm", query: AIRPORT, lat: 7.18, lng: 79.884, desc: "Head to CMB via Airport Expressway by 12:15pm. SriLankan UL 143 departs ~5:05pm", type: "b", diet: "none", tier: "core", defaultPick: true },
+
+          // Alternate Famous Restaurants & Last-Minute Stops (Day 6)
+          { id: "d6_f1", name: "Seed Cafe", query: "Seed Cafe Colombo", lat: 6.9045, lng: 79.864, desc: "Gorgeously restored colonial house cafe near Independence Square — healthy brunch & coffee", type: "f", diet: "both", tier: "alt_food", defaultPick: false },
+          { id: "d6_f2", name: "Kiku Colombo", query: "Kiku Colombo", lat: 6.9055, lng: 79.858, desc: "Trendy Japanese-inspired brunch & lunch spot (katsu sandos, donburi bowls & matcha)", type: "f", diet: "both", tier: "alt_food", defaultPick: false },
+          { id: "d6_f3", name: "One Galle Face Mall & Spa Ceylon", query: "One Galle Face Mall Colombo", lat: 6.9272, lng: 79.8448, desc: "Luxury oceanfront mall — pick up Spa Ceylon Ayurvedic gifts, Dilmah tea & quick lunch", type: "v", diet: "both", tier: "alt_food", defaultPick: false }
+        ]
+      }
+    ];
+
+    const STOP_TYPES = {
+      v: { label: "Visit", color: "#0e7c7b", bgClass: "bg-teal-50 text-teal-700 border-teal-200 dark:bg-teal-950/60 dark:text-teal-300 dark:border-teal-800" },
+      f: { label: "Eat", color: "#e07b00", bgClass: "bg-amber-50 text-amber-700 border-amber-200 dark:bg-amber-950/60 dark:text-amber-300 dark:border-amber-800" },
+      s: { label: "Sunset", color: "#d6457a", bgClass: "bg-rose-50 text-rose-700 border-rose-200 dark:bg-rose-950/60 dark:text-rose-300 dark:border-rose-800" },
+      p: { label: "Party / Pub", color: "#7a4bd6", bgClass: "bg-purple-50 text-purple-700 border-purple-200 dark:bg-purple-950/60 dark:text-purple-300 dark:border-purple-800" },
+      b: { label: "Base / Move", color: "#5a6b7a", bgClass: "bg-slate-100 text-slate-700 border-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:border-slate-700" }
+    };
+
+    const MILESTONES = [
+      ["2026-12-12T09:00", "Land in Colombo · 6E 1185"],
+      ["2026-12-13T08:00", "Leave for Peace Pagoda"],
+      ["2026-12-13T17:15", "Sunset at Galle ramparts"],
+      ["2026-12-14T17:45", "Sunset at Midigama"],
+      ["2026-12-15T17:15", "Sunset at Parrot Rock"],
+      ["2026-12-16T10:00", "Leave Ahangama for Colombo"],
+      ["2026-12-16T17:45", "Sunset at Galle Face"],
+      ["2026-12-17T12:15", "Leave for the airport"],
+      ["2026-12-17T17:05", "UL 143 departs (confirm time)"]
+    ];
+
+    const FLIGHTS = [
+      {
+        key: "o",
+        header: "Outbound · Sat 12 Dec",
+        airline: "IndiGo",
+        flightNo: "6E 1185",
+        fromCode: "BOM",
+        fromCity: "Mumbai",
+        toCode: "CMB",
+        toCity: "Colombo",
+        pnr: "YE2NYT",
+        query: "6E 1185 flight status",
+        fr24: "6e1185",
+        fa: "IGO1185",
+        defaultDep: "06:15",
+        defaultArr: "09:00",
+        note: "You plan to land ~9:00am. Confirm exact times on your ticket."
+      },
+      {
+        key: "r",
+        header: "Return · Thu 17 Dec",
+        airline: "SriLankan Airlines",
+        flightNo: "UL 143",
+        fromCode: "CMB",
+        fromCity: "Colombo",
+        toCode: "BOM",
+        toCity: "Mumbai",
+        pnr: "EOI9NT",
+        query: "UL 143 flight status",
+        fr24: "ul143",
+        fa: "ALK143",
+        defaultDep: "17:05",
+        defaultArr: "19:45",
+        note: "Usually leaves ~5:05–5:15pm and lands ~7:45pm. Confirm on your ticket."
+      }
+    ];
+
+    const COASTLINE = [
+      [7.4, 79.8], [7.21, 79.83], [7.0, 79.84], [6.93, 79.845],
+      [6.83, 79.857], [6.58, 79.96], [6.42, 79.995], [6.14, 80.1],
+      [6.03, 80.2], [5.99, 80.32], [5.955, 80.43], [5.93, 80.56],
+      [5.88, 80.7], [5.8, 81.5], [7.4, 81.5]
+    ];
+
+    const DEFAULT_PACKING_CHECKLIST = [
+      { id: "eta", cat: "Documents", text: "Sri Lanka ETA / Visa approval printout & digital copy", done: false },
+      { id: "pass", cat: "Documents", text: "Passports for Ankit, Jeenat, Laxit & Sayali (valid 6+ months)", done: false },
+      { id: "tix", cat: "Documents", text: "Flight tickets (PNRs: YE2NYT & EOI9NT) + Somar Ahangama booking", done: false },
+      { id: "gmap_off", cat: "Offline Maps", text: "Google Maps → Profile → Offline Maps → Verify South & West Sri Lanka downloaded", done: true },
+      { id: "forex", cat: "Money & Apps", text: "Zero-markup Forex card + INR/USD cash to exchange at CMB airport", done: false },
+      { id: "apps", cat: "Money & Apps", text: "Install & verify PickMe and Uber Sri Lanka apps before flying", done: false },
+      { id: "sim", cat: "Money & Apps", text: "Dialog / Mobitel tourist eSIM or airport SIM card", done: false },
+      { id: "plug", cat: "Gear & Clothing", text: "Universal travel adapter (Sri Lanka uses Type D & Type G)", done: false },
+      { id: "temple", cat: "Gear & Clothing", text: "Modest clothing covering shoulders & knees for temples", done: false },
+      { id: "sun", cat: "Gear & Clothing", text: "Reef-safe sunscreen, sunglasses, party outfits & beachwear", done: false }
+    ];
+
+    // Build initial shortlist map from defaultPick flags
+    function getDefaultShortlist() {
+      const map = {};
+      DAYS_DATA.forEach((day) => {
+        day.items.forEach((item) => {
+          map[item.id] = !!item.defaultPick;
+        });
+      });
+      return map;
+    }
+
+    /**
+     * =========================================================================
+     * STATE & LOCALSTORAGE PERSISTENCE
+     * =========================================================================
+     */
+    const store = {
+      get(key, fallback) {
+        try {
+          const val = localStorage.getItem("sl26_v2_" + key);
+          return val !== null ? JSON.parse(val) : fallback;
+        } catch (err) {
+          return fallback;
+        }
+      },
+      set(key, val) {
+        try {
+          localStorage.setItem("sl26_v2_" + key, JSON.stringify(val));
+        } catch (err) {
+          // Ignore quota errors
+        }
+      }
+    };
+
+    let state = {
+      tab: "plan",
+      day: 0,
+      theme: store.get("theme", "system"),
+      onlyShortlisted: store.get("only_shortlisted", false),
+      shortlist: { ...getDefaultShortlist(), ...store.get("shortlist", {}) },
+      hotelName: store.get("hotel_name", "Galle Face (hotel area)"),
+      notes: store.get("notes", {}),
+      flightTimes: store.get("ft", {}),
+      names: store.get("names", ["Ankit Jeenat", "Laxit Sayali"]),
+      inrToLkr: store.get("inr_to_lkr", 3.55), // 1 INR = 3.55 LKR
+      usdToInr: store.get("usd_to_inr", 84.5), // 1 USD = 84.50 INR
+      expenses: store.get("exp", []),
+      checklist: store.get("checklist", DEFAULT_PACKING_CHECKLIST)
+    };
+
+    /**
+     * =========================================================================
+     * UTILITIES & OFFLINE GOOGLE MAPS HELPERS
+     * =========================================================================
+     */
+    const $ = (id) => document.getElementById(id);
+    const esc = (str) =>
+      String(str ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+    const formatDuration = (mins) => {
+      const h = Math.floor(mins / 60);
+      const m = mins % 60;
+      return (h > 0 ? `${h} h ` : "") + (m > 0 ? `${m} min` : h === 0 ? "0 min" : "");
+    };
+
+    const legSpeedColor = (mins) => {
+      if (mins < 30) return { hex: "#16a34a", badge: "bg-emerald-50 text-emerald-700 border-emerald-200 dark:bg-emerald-950/50 dark:text-emerald-300 dark:border-emerald-800" };
+      if (mins < 90) return { hex: "#d97706", badge: "bg-amber-50 text-amber-700 border-amber-200 dark:bg-amber-950/50 dark:text-amber-300 dark:border-amber-800" };
+      return { hex: "#dc2626", badge: "bg-rose-50 text-rose-700 border-rose-200 dark:bg-rose-950/50 dark:text-rose-300 dark:border-rose-800" };
+    };
+
+    // Universal Google Maps URLs — on Android, these trigger the native Google Maps App
+    // which automatically falls back to your downloaded Offline Maps when offline!
+    const gmapsPlaceUrl = (query, lat, lng) =>
+      `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
+
+    const gmapsMultiRouteUrl = (items) => {
+      if (!items.length) return "https://www.google.com/maps";
+      if (items.length === 1) return gmapsPlaceUrl(items[0].query, items[0].lat, items[0].lng);
+      // Google Maps supports up to 9 waypoints cleanly in mobile URLs
+      const capped = items.slice(0, 10);
+      const origin = encodeURIComponent(capped[0].query);
+      const dest = encodeURIComponent(capped[capped.length - 1].query);
+      const waypoints = capped.length > 2
+        ? `&waypoints=${encodeURIComponent(capped.slice(1, -1).map((x) => x.query).join("|"))}`
+        : "";
+      return `https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=${origin}&destination=${dest}${waypoints}`;
+    };
+
+    let toastTimer = null;
+    function showToast(message) {
+      const el = $("toast");
+      const msgEl = $("toastMsg");
+      msgEl.innerHTML = `<svg class="w-4 h-4 text-emerald-400 dark:text-emerald-600 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>${esc(message)}</span>`;
+      el.classList.remove("hidden");
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => el.classList.add("hidden"), 2400);
+    }
+
+    function copyText(text, label = "Copied to clipboard") {
+      const textarea = document.createElement("textarea");
+      textarea.value = text;
+      textarea.style.position = "fixed";
+      textarea.style.opacity = "0";
+      document.body.appendChild(textarea);
+      textarea.select();
+      try {
+        document.execCommand("copy");
+        showToast(label);
+      } catch (e) {
+        showToast("Could not copy automatically");
+      }
+      document.body.removeChild(textarea);
+    }
+
+    /**
+     * =========================================================================
+     * THEME MANAGEMENT (System / Light / Dark)
+     * =========================================================================
+     */
+    function applyTheme() {
+      const root = document.documentElement;
+      const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+      const isDark = state.theme === "dark" || (state.theme === "system" && prefersDark);
+
+      root.classList.toggle("dark", isDark);
+      document.body.style.setProperty("--page-bg", isDark ? "#101616" : "#faf8f4");
+
+      const iconMap = {
+        system: `<svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>`,
+        light: `<svg class="w-3.5 h-3.5 text-amber-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>`,
+        dark: `<svg class="w-3.5 h-3.5 text-brand-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>`
+      };
+      const labelMap = { system: "Auto", light: "Light", dark: "Dark" };
+      $("themeIcon").innerHTML = iconMap[state.theme];
+      $("themeLabel").textContent = labelMap[state.theme];
+    }
+
+    if (window.matchMedia) {
+      window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
+        if (state.theme === "system") applyTheme();
+      });
+    }
+
+    /**
+     * =========================================================================
+     * OFFLINE SVG ROUTE MAP WITH SMART PIN DE-CLUSTERING
+     * =========================================================================
+     */
+    function buildOfflineSvgMap(coreStops, legs, shortlistedAlts) {
+      const allMapPoints = [...coreStops, ...shortlistedAlts];
+      if (!allMapPoints.length) return "";
+
+      const W = 360;
+      const H = 225;
+      const PAD = 30;
+
+      const lats = allMapPoints.map((s) => s.lat);
+      const lngs = allMapPoints.map((s) => s.lng);
+      const midLat = lats.reduce((a, b) => a + b, 0) / lats.length;
+      const cosLat = Math.cos((midLat * Math.PI) / 180);
+
+      const minLng = Math.min(...lngs);
+      const minLat = Math.min(...lats);
+      const spanLng = Math.max(...lngs) - minLng || 0.012;
+      const spanLat = Math.max(...lats) - minLat || 0.012;
+
+      const scale = Math.min((W - 2 * PAD) / (spanLng * cosLat), (H - 2 * PAD) / spanLat);
+      const offsetX = (W - spanLng * cosLat * scale) / 2;
+      const offsetY = (H - spanLat * scale) / 2;
+
+      const project = (lat, lng) => [
+        offsetX + (lng - minLng) * cosLat * scale,
+        H - offsetY - (lat - minLat) * scale
+      ];
+
+      const rawPts = allMapPoints.map((s) => project(s.lat, s.lng));
+      const displayPts = rawPts.map((p) => [...p]);
+      const visited = new Array(rawPts.length).fill(false);
+
+      // Fan out overlapping pins radially so every pin badge stays legible
+      for (let i = 0; i < rawPts.length; i++) {
+        if (visited[i]) continue;
+        const cluster = [i];
+        visited[i] = true;
+        for (let j = i + 1; j < rawPts.length; j++) {
+          if (visited[j]) continue;
+          const dist = Math.hypot(rawPts[i][0] - rawPts[j][0], rawPts[i][1] - rawPts[j][1]);
+          if (dist < 16) {
+            cluster.push(j);
+            visited[j] = true;
+          }
+        }
+        if (cluster.length > 1) {
+          const radius = cluster.length === 2 ? 10 : 13.5;
+          cluster.forEach((idx, k) => {
+            const angle = (2 * Math.PI * k) / cluster.length - Math.PI / 4;
+            displayPts[idx][0] = Math.max(16, Math.min(W - 16, rawPts[idx][0] + Math.cos(angle) * radius));
+            displayPts[idx][1] = Math.max(16, Math.min(H - 16, rawPts[idx][1] + Math.sin(angle) * radius));
+          });
+        }
+      }
+
+      let landSvg = "";
+      if (spanLat > 0.22) {
+        const coastPts = COASTLINE.map((c) => project(c[0], c[1]).map((n) => n.toFixed(1)).join(",")).join(" ");
+        landSvg = `<polygon points="${coastPts}" class="fill-[#e9e2cf] dark:fill-[#22302e] stroke-[#94a3b8] dark:stroke-[#475569]" stroke-width="1.2" />`;
+      } else {
+        landSvg = `<circle cx="${W * 0.72}" cy="${H * 0.25}" r="140" class="fill-[#efe9da]/60 dark:fill-[#1c2827]/60" />`;
+      }
+
+      // Draw driving segments between core stops
+      const segmentsSvg = legs
+        .map((leg, i) => {
+          const p1 = displayPts[i];
+          const p2 = displayPts[i + 1];
+          if (!p1 || !p2) return "";
+          const color = legSpeedColor(leg[1]).hex;
+          return `<line x1="${p1[0].toFixed(1)}" y1="${p1[1].toFixed(1)}" x2="${p2[0].toFixed(1)}" y2="${p2[1].toFixed(1)}" stroke="${color}" stroke-width="3.2" stroke-linecap="round" stroke-opacity="0.9" />`;
+        })
+        .join("");
+
+      // Core numbered pins + Starred shortlisted alternate pins
+      const pinsSvg = displayPts
+        .map((pt, i) => {
+          const item = allMapPoints[i];
+          const isCore = i < coreStops.length;
+          const fill = STOP_TYPES[item.type]?.color || "#0e7c7b";
+          const label = isCore ? `${i + 1}` : "★";
+          const opacity = isCore && !state.shortlist[item.id] ? "0.45" : "1";
+          return `
+            <g opacity="${opacity}">
+              <circle cx="${pt[0].toFixed(1)}" cy="${pt[1].toFixed(1)}" r="${isCore ? 10.5 : 9}" fill="${fill}" stroke="#ffffff" stroke-width="1.8" />
+              <text x="${pt[0].toFixed(1)}" y="${(pt[1] + 3.5).toFixed(1)}" fill="#ffffff" font-size="${isCore ? 10 : 9}" font-weight="800" font-family="Inter, sans-serif" text-anchor="middle">${label}</text>
+            </g>
+          `;
+        })
+        .join("");
+
+      return `
+        <div class="relative rounded-2xl overflow-hidden border border-sand-200 dark:border-slate-700/80 bg-[#dcecf2] dark:bg-[#132229]">
+          <svg viewBox="0 0 ${W} ${H}" class="w-full h-auto block" role="img" aria-label="Offline route map">
+            ${landSvg}
+            ${segmentsSvg}
+            ${pinsSvg}
+          </svg>
+          <span class="absolute top-2.5 right-2.5 px-2 py-0.5 rounded-full text-[10px] font-bold bg-white/85 dark:bg-slate-900/80 text-slate-700 dark:text-slate-200 backdrop-blur-xs shadow-xs">
+            Offline SVG + ★ Picks
+          </span>
+        </div>
+      `;
+    }
+
+    /**
+     * =========================================================================
+     * HELPER: RENDER DIET BADGE & STOP CARD WITH SHORTLIST CHECKBOX
+     * =========================================================================
+     */
+    function renderDietBadge(diet) {
+      if (diet === "veg") {
+        return `<span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-emerald-100/90 text-emerald-800 dark:bg-emerald-950/80 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800">🌱 100% Veg / Vegan</span>`;
+      }
+      if (diet === "both") {
+        return `<span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-sky-100/90 text-sky-800 dark:bg-sky-950/80 dark:text-sky-300 border border-sky-200 dark:border-sky-800">🍽️ Veg + Famous Seafood/Local</span>`;
+      }
+      return "";
+    }
+
+    function renderVenueCard(item, stepNumber = null) {
+      const checked = !!state.shortlist[item.id];
+      const typeMeta = STOP_TYPES[item.type] || STOP_TYPES.v;
+      const displayName = item.id === "d6_1" ? (state.hotelName || item.name) : item.name;
+      const displayQuery = item.id === "d6_1" && state.hotelName !== "Galle Face (hotel area)" ? `${state.hotelName} Colombo` : item.query;
+
+      return `
+        <div class="flex gap-2.5 items-start transition-opacity ${!checked && state.onlyShortlisted ? "hidden" : ""}">
+          <!-- Step Number or Star Badge -->
+          ${
+            stepNumber !== null
+              ? `<div class="w-7 h-7 rounded-full text-white font-display font-extrabold text-xs flex items-center justify-center shrink-0 mt-1 shadow-xs ${checked ? "" : "opacity-45"}" style="background-color: ${typeMeta.color}">
+                  ${stepNumber}
+                </div>`
+              : `<div class="w-7 h-7 rounded-full text-white font-display font-extrabold text-xs flex items-center justify-center shrink-0 mt-1 shadow-xs ${checked ? "" : "opacity-55"}" style="background-color: ${typeMeta.color}">
+                  ★
+                </div>`
+          }
+
+          <!-- Venue Card Body -->
+          <div class="flex-1 min-w-0 rounded-2xl p-3 border transition-all ${
+            checked
+              ? "bg-white dark:bg-slate-900/80 border-brand-500/40 dark:border-brand-500/40 shadow-2xs"
+              : "bg-sand-50/70 dark:bg-slate-900/40 border-sand-200/80 dark:border-slate-800 opacity-85"
+          }">
+            <div class="flex items-start justify-between gap-2">
+              <div class="flex items-center gap-1.5 flex-wrap">
+                <span class="px-2 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-wider border ${typeMeta.bgClass}">
+                  ${typeMeta.label}
+                </span>
+                ${renderDietBadge(item.diet)}
+              </div>
+
+              <!-- Shortlist Checkbox Toggle -->
+              <label class="tap-scale inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-bold cursor-pointer select-none shrink-0 border ${
+                checked
+                  ? "bg-brand-600 text-white border-brand-600"
+                  : "bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border-sand-200 dark:border-slate-700"
+              }">
+                <input type="checkbox" data-shortlist-id="${esc(item.id)}" ${checked ? "checked" : ""} class="sr-only" />
+                <span>${checked ? "✓ Picked" : "+ Pick"}</span>
+              </label>
+            </div>
+
+            <div class="flex items-baseline justify-between gap-2 mt-1.5">
+              <h3 class="font-display font-bold text-sm text-slate-900 dark:text-white leading-snug">${esc(displayName)}</h3>
+              <a href="${gmapsPlaceUrl(displayQuery, item.lat, item.lng)}" target="_blank" rel="noopener" class="tap-scale shrink-0 inline-flex items-center gap-1 text-xs font-bold text-brand-600 dark:text-brand-400 hover:underline">
+                <span>Offline Map</span>
+                <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </div>
+
+            <p class="text-xs text-slate-600 dark:text-slate-300 mt-1 leading-relaxed">${esc(item.desc)}</p>
+          </div>
+        </div>
+      `;
+    }
+
+    /**
+     * =========================================================================
+     * TAB 1: ITINERARY VIEW (CORE + ALTERNATE RESTAURANTS + NIGHTLIFE PUBS)
+     * =========================================================================
+     */
+    function renderItineraryTab() {
+      const dayObj = DAYS_DATA[state.day];
+      const coreStops = dayObj.items.filter((x) => x.tier === "core");
+      const altFood = dayObj.items.filter((x) => x.tier === "alt_food");
+      const altParty = dayObj.items.filter((x) => x.tier === "alt_party");
+
+      const shortlistedToday = dayObj.items.filter((x) => state.shortlist[x.id]);
+      const shortlistedAlts = dayObj.items.filter((x) => x.tier !== "core" && state.shortlist[x.id]);
+
+      const totalKm = dayObj.legs.reduce((sum, l) => sum + l[0], 0);
+      const totalMin = dayObj.legs.reduce((sum, l) => sum + l[1], 0);
+
+      // Day Chips
+      const chipsHtml = DAYS_DATA.map((d, i) => {
+        const active = i === state.day;
+        const pickedCount = d.items.filter((x) => state.shortlist[x.id]).length;
+        return `
+          <button type="button" data-day="${i}" class="tap-scale shrink-0 px-3.5 py-2 rounded-2xl border text-left transition-all ${
+            active
+              ? "bg-brand-600 text-white border-brand-600 shadow-sm shadow-brand-600/25"
+              : "bg-white dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 border-sand-200 dark:border-slate-700 hover:border-brand-500/50"
+          }">
+            <div class="text-xs font-extrabold tracking-tight">${esc(d.code)}</div>
+            <div class="text-[10px] ${active ? "text-brand-100" : "text-slate-400"}">${esc(d.shortDate)} · ${pickedCount} picked</div>
+          </button>
+        `;
+      }).join("");
+
+      // Day 6 Hotel Input
+      const hotelEditorHtml =
+        state.day === 5
+          ? `
+          <div class="mt-3 p-3.5 rounded-2xl bg-white dark:bg-slate-800/80 border border-sand-200 dark:border-slate-700">
+            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-1.5" for="hotelInput">
+              Colombo Night 5 Hotel (Updates Stop #1 & Route)
+            </label>
+            <input id="hotelInput" type="text" value="${esc(state.hotelName)}" placeholder="e.g. Cinnamon Red / Galle Face Hotel"
+              class="w-full px-3 py-2 rounded-xl text-sm bg-sand-50 dark:bg-slate-900 border border-sand-200 dark:border-slate-700 focus:outline-none focus:border-brand-600" />
+          </div>
+        `
+          : "";
+
+      // Core Route Timeline
+      let coreTimelineHtml = "";
+      coreStops.forEach((item, idx) => {
+        const leg = dayObj.legs[idx];
+        coreTimelineHtml += renderVenueCard(item, idx + 1);
+        if (leg && (!state.onlyShortlisted || state.shortlist[item.id])) {
+          const speed = legSpeedColor(leg[1]);
+          coreTimelineHtml += `
+            <div class="ml-3.5 pl-6 py-2 border-l-2 border-dashed border-slate-300 dark:border-slate-700 flex items-center">
+              <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-semibold border ${speed.badge}">
+                🚗 ~${leg[0]} km · ${formatDuration(leg[1])}
+              </span>
+            </div>
+          `;
+        } else if (leg) {
+          coreTimelineHtml += `<div class="h-2.5"></div>`;
+        }
+      });
+
+      // Alternate Famous Restaurants Section
+      const altFoodHtml = altFood.length
+        ? `
+          <div class="mt-3 bg-white dark:bg-slate-800/80 border border-sand-200 dark:border-slate-700/80 rounded-3xl p-4 shadow-xs">
+            <div class="flex items-center justify-between mb-1">
+              <h3 class="font-display font-extrabold text-sm text-slate-900 dark:text-white">🍽️ Alternate Famous Restaurants & Cafes</h3>
+              <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300">Veg + Seafood</span>
+            </div>
+            <p class="text-[11px] text-slate-500 dark:text-slate-400 mb-3">Tap <b>+ Pick</b> on any spot you want to add to your shortlisted route.</p>
+            <div class="space-y-2.5">
+              ${altFood.map((item) => renderVenueCard(item, null)).join("")}
+            </div>
+          </div>
+        `
+        : "";
+
+      // Famous Nightlife & Party Pubs Section
+      const altPartyHtml = altParty.length
+        ? `
+          <div class="mt-3 bg-white dark:bg-slate-800/80 border border-purple-200/80 dark:border-purple-900/60 rounded-3xl p-4 shadow-xs">
+            <div class="flex items-center justify-between mb-1">
+              <h3 class="font-display font-extrabold text-sm text-slate-900 dark:text-white">🪩 Famous Night Party Pubs & Clubs</h3>
+              <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-purple-100 text-purple-800 dark:bg-purple-950 dark:text-purple-300">${esc(dayObj.shortDate)} Night</span>
+            </div>
+            <p class="text-[11px] text-slate-500 dark:text-slate-400 mb-3">Top party venues for this specific night — pick your favourites to shortlist.</p>
+            <div class="space-y-2.5">
+              ${altParty.map((item) => renderVenueCard(item, null)).join("")}
+            </div>
+          </div>
+        `
+        : "";
+
+      const routeItemsToLaunch = shortlistedToday.length ? shortlistedToday : coreStops;
+
+      return `
+        <!-- Day Selector Chips -->
+        <div class="flex gap-2 overflow-x-auto no-scrollbar pb-1 -mx-4 px-4">
+          ${chipsHtml}
+        </div>
+
+        <!-- Day Title & Filter Bar -->
+        <div class="mt-3 flex items-start justify-between gap-2">
+          <div>
+            <h2 class="font-display font-extrabold text-xl tracking-tight text-slate-900 dark:text-white">${esc(dayObj.title)}</h2>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">${esc(dayObj.summary)}</p>
+          </div>
+          <div class="text-right shrink-0 bg-white dark:bg-slate-800/90 border border-sand-200 dark:border-slate-700 px-3 py-1.5 rounded-2xl">
+            <div class="text-xs font-extrabold text-brand-600 dark:text-brand-400">~${totalKm} km</div>
+            <div class="text-[10px] font-semibold text-slate-500 dark:text-slate-400">${formatDuration(totalMin)} base</div>
+          </div>
+        </div>
+
+        <!-- View Filter Pill Toggle (All Options vs My Shortlist) -->
+        <div class="mt-3 flex items-center justify-between gap-2 bg-white dark:bg-slate-800/80 border border-sand-200 dark:border-slate-700 p-1.5 rounded-2xl">
+          <div class="grid grid-cols-2 flex-1 gap-1">
+            <button type="button" data-filter-shortlist="0" class="py-1.5 px-3 rounded-xl text-xs font-bold transition-colors ${
+              !state.onlyShortlisted ? "bg-brand-600 text-white" : "text-slate-600 dark:text-slate-300"
+            }">
+              All Options (${dayObj.items.length})
+            </button>
+            <button type="button" data-filter-shortlist="1" class="py-1.5 px-3 rounded-xl text-xs font-bold transition-colors ${
+              state.onlyShortlisted ? "bg-brand-600 text-white" : "text-slate-600 dark:text-slate-300"
+            }">
+              ✓ Shortlisted (${shortlistedToday.length})
+            </button>
+          </div>
+        </div>
+
+        ${hotelEditorHtml}
+
+        <!-- Offline Map Card -->
+        <div class="mt-3 bg-white dark:bg-slate-800/80 border border-sand-200 dark:border-slate-700/80 rounded-3xl p-3.5 shadow-xs">
+          ${buildOfflineSvgMap(coreStops, dayObj.legs, shortlistedAlts)}
+
+          <!-- Map Legend -->
+          <div class="mt-3 flex flex-wrap items-center justify-between gap-y-1.5 text-[11px] text-slate-600 dark:text-slate-300">
+            <div class="flex flex-wrap items-center gap-x-2.5 gap-y-1">
+              <span class="inline-flex items-center gap-1"><i class="w-2.5 h-2.5 rounded-full bg-[#0e7c7b] inline-block"></i>Visit</span>
+              <span class="inline-flex items-center gap-1"><i class="w-2.5 h-2.5 rounded-full bg-[#e07b00] inline-block"></i>Eat</span>
+              <span class="inline-flex items-center gap-1"><i class="w-2.5 h-2.5 rounded-full bg-[#d6457a] inline-block"></i>Sunset</span>
+              <span class="inline-flex items-center gap-1"><i class="w-2.5 h-2.5 rounded-full bg-[#7a4bd6] inline-block"></i>Party</span>
+              <span class="inline-flex items-center gap-1"><i class="w-2.5 h-2.5 rounded-full bg-[#5a6b7a] inline-block"></i>Base</span>
+            </div>
+            <div class="flex items-center gap-2 text-[10px] font-semibold">
+              <span class="inline-flex items-center gap-1"><span class="w-2.5 h-1 rounded bg-emerald-600 inline-block"></span>&lt;30m</span>
+              <span class="inline-flex items-center gap-1"><span class="w-2.5 h-1 rounded bg-amber-600 inline-block"></span>30–90m</span>
+              <span class="inline-flex items-center gap-1"><span class="w-2.5 h-1 rounded bg-rose-600 inline-block"></span>90m+</span>
+            </div>
+          </div>
+
+          <!-- Open Shortlisted Route in Offline Google Maps App -->
+          <a href="${gmapsMultiRouteUrl(routeItemsToLaunch)}" target="_blank" rel="noopener" class="tap-scale mt-3 w-full py-3 px-4 rounded-2xl bg-brand-600 hover:bg-brand-700 text-white font-display font-bold text-sm flex items-center justify-center gap-2 shadow-sm shadow-brand-600/20">
+            <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+            <span>Open Shortlisted Route (${Math.min(10, routeItemsToLaunch.length)} stops) in Google Maps</span>
+          </a>
+
+          <div class="mt-2.5 px-3 py-2 rounded-xl bg-teal-50/80 dark:bg-teal-950/40 border border-teal-200/70 dark:border-teal-800/60 text-[11px] text-teal-900 dark:text-teal-200 leading-snug">
+            <b>Offline Google Maps Tip:</b> Tapping any map button opens your Android Google Maps app directly and uses your downloaded offline Sri Lanka map automatically (even in Airplane Mode).
+          </div>
+        </div>
+
+        <!-- Core Day Route Timeline -->
+        <div class="mt-3 bg-white dark:bg-slate-800/80 border border-sand-200 dark:border-slate-700/80 rounded-3xl p-4 shadow-xs">
+          <div class="flex items-center justify-between mb-3">
+            <h3 class="font-display font-bold text-sm text-slate-900 dark:text-white">Core Route & Must-Do Stops</h3>
+            <span class="text-[11px] text-slate-400">Tap ✓ Pick to toggle</span>
+          </div>
+          <div>${coreTimelineHtml}</div>
+        </div>
+
+        ${altFoodHtml}
+        ${altPartyHtml}
+
+        <!-- Day Notes Card -->
+        <div class="mt-3 bg-white dark:bg-slate-800/80 border border-sand-200 dark:border-slate-700/80 rounded-3xl p-4 shadow-xs">
+          <div class="flex items-center justify-between mb-2">
+            <label for="dayNotes" class="font-display font-bold text-sm text-slate-900 dark:text-white">Notes & Table Bookings for ${esc(dayObj.code)}</label>
+            <span class="text-[10px] font-semibold text-emerald-600 dark:text-emerald-400">Auto-saved</span>
+          </div>
+          <textarea id="dayNotes" data-note-day="${state.day}" rows="3" placeholder="Add driver contacts, Ministry of Crab reservation time, guestlist notes…"
+            class="w-full p-3 rounded-2xl text-sm bg-sand-50 dark:bg-slate-900 border border-sand-200 dark:border-slate-700 focus:outline-none focus:border-brand-600 resize-y">${esc(state.notes[state.day] || "")}</textarea>
+        </div>
+      `;
+    }
+
+    /**
+     * =========================================================================
+     * TAB 2: FLIGHTS & LIVE IST COUNTDOWN VIEW
+     * =========================================================================
+     */
+    function renderFlightsTab() {
+      const now = Date.now();
+      const upcoming = MILESTONES.map(([iso, label]) => ({
+        ts: new Date(iso + ":00+05:30").getTime(),
+        iso,
+        label
+      }))
+        .filter((m) => m.ts > now)
+        .slice(0, 5);
+
+      const formatCountdown = (targetTs) => {
+        const diffMins = Math.max(1, Math.round((targetTs - now) / 60000));
+        const d = Math.floor(diffMins / 1440);
+        const h = Math.floor((diffMins % 1440) / 60);
+        const m = diffMins % 60;
+        if (d > 0) return `${d}d ${h}h`;
+        if (h > 0) return `${h}h ${m}m`;
+        return `${m}m`;
+      };
+
+      const milestonesHtml = upcoming.length
+        ? upcoming
+            .map(
+              (m, idx) => `
+              <div class="flex items-center justify-between gap-3 py-2.5 ${idx > 0 ? "border-t border-sand-200/80 dark:border-slate-700/80" : ""}">
+                <div class="min-w-0">
+                  <div class="text-sm font-semibold text-slate-800 dark:text-slate-100 truncate">${esc(m.label)}</div>
+                  <div class="text-[11px] text-slate-400">${m.iso.replace("2026-12-", "Dec ").replace("T", " · ")} IST</div>
+                </div>
+                <span class="shrink-0 px-2.5 py-1 rounded-full text-xs font-extrabold bg-brand-50 text-brand-700 dark:bg-brand-900/60 dark:text-brand-200">
+                  in ${formatCountdown(m.ts)}
+                </span>
+              </div>
+            `
+            )
+            .join("")
+        : `<p class="text-xs text-slate-500 dark:text-slate-400 py-2">All scheduled trip milestones have passed. Welcome home!</p>`;
+
+      const flightCardsHtml = FLIGHTS.map((f) => {
+        const depVal = state.flightTimes[f.key + "d"] ?? f.defaultDep;
+        const arrVal = state.flightTimes[f.key + "a"] ?? f.defaultArr;
+
+        return `
+          <div class="mt-3 bg-white dark:bg-slate-800/90 border border-sand-200 dark:border-slate-700/80 rounded-3xl p-4 shadow-xs overflow-hidden">
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="text-[11px] font-extrabold uppercase tracking-wider text-brand-600 dark:text-brand-400">${esc(f.header)}</span>
+              <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200">
+                ${esc(f.airline)} · ${esc(f.flightNo)}
+              </span>
+            </div>
+
+            <div class="flex items-center justify-between gap-2 my-2">
+              <div>
+                <div class="font-display font-extrabold text-3xl tracking-tight text-slate-900 dark:text-white">${esc(f.fromCode)}</div>
+                <div class="text-xs text-slate-500 dark:text-slate-400">${esc(f.fromCity)}</div>
+              </div>
+
+              <div class="flex-1 flex flex-col items-center px-2">
+                <div class="w-full flex items-center gap-1.5 text-brand-600 dark:text-brand-400">
+                  <span class="w-2 h-2 rounded-full border-2 border-current"></span>
+                  <div class="flex-1 border-t-2 border-dashed border-slate-300 dark:border-slate-600"></div>
+                  <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg>
+                  <div class="flex-1 border-t-2 border-dashed border-slate-300 dark:border-slate-600"></div>
+                  <span class="w-2 h-2 rounded-full bg-current"></span>
+                </div>
+                <span class="text-[10px] font-semibold text-slate-400 mt-1">Direct · 4 Pax (Ankit, Jeenat, Laxit, Sayali)</span>
+              </div>
+
+              <div class="text-right">
+                <div class="font-display font-extrabold text-3xl tracking-tight text-slate-900 dark:text-white">${esc(f.toCode)}</div>
+                <div class="text-xs text-slate-500 dark:text-slate-400">${esc(f.toCity)}</div>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-2.5 mt-3">
+              <div class="p-2.5 rounded-2xl bg-sand-50 dark:bg-slate-900/80 border border-sand-200 dark:border-slate-700">
+                <label class="block text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-0.5">Departs (Local)</label>
+                <input type="text" data-ft="${f.key}d" value="${esc(depVal)}" placeholder="06:15"
+                  class="w-full bg-transparent font-display font-bold text-base text-slate-900 dark:text-white focus:outline-none" />
+              </div>
+              <div class="p-2.5 rounded-2xl bg-sand-50 dark:bg-slate-900/80 border border-sand-200 dark:border-slate-700">
+                <label class="block text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-0.5">Arrives (Local)</label>
+                <input type="text" data-ft="${f.key}a" value="${esc(arrVal)}" placeholder="09:00"
+                  class="w-full bg-transparent font-display font-bold text-base text-slate-900 dark:text-white focus:outline-none" />
+              </div>
+            </div>
+
+            <div class="ticket-divider my-4"></div>
+
+            <div class="flex items-center justify-between gap-2 bg-brand-50/70 dark:bg-brand-950/40 border border-brand-200/70 dark:border-brand-800/60 rounded-2xl px-3.5 py-2.5">
+              <div>
+                <div class="text-[10px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Booking Ref (PNR)</div>
+                <div class="font-mono font-extrabold text-base tracking-widest text-slate-900 dark:text-white">${esc(f.pnr)}</div>
+              </div>
+              <button type="button" data-copy="${esc(f.pnr)}" data-copy-msg="PNR ${esc(f.pnr)} copied!" class="tap-scale px-3 py-1.5 rounded-xl bg-white dark:bg-slate-800 border border-sand-200 dark:border-slate-700 text-xs font-bold text-brand-600 dark:text-brand-400 flex items-center gap-1.5 shadow-2xs">
+                <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                <span>Copy PNR</span>
+              </button>
+            </div>
+
+            <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-2.5">${esc(f.note)}</p>
+
+            <div class="mt-3 space-y-2">
+              <a href="https://www.flightradar24.com/data/flights/${f.fr24}" target="_blank" rel="noopener" class="tap-scale w-full py-2.5 px-4 rounded-2xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-xs flex items-center justify-center gap-1.5">
+                <span>Track Live on Flightradar24</span>
+                <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+              <div class="grid grid-cols-2 gap-2">
+                <a href="https://www.flightaware.com/live/flight/${f.fa}" target="_blank" rel="noopener" class="tap-scale py-2 px-3 rounded-xl bg-sand-50 dark:bg-slate-900 border border-sand-200 dark:border-slate-700 text-xs font-bold text-center text-slate-700 dark:text-slate-200">
+                  FlightAware
+                </a>
+                <a href="https://www.google.com/search?q=${encodeURIComponent(f.query)}" target="_blank" rel="noopener" class="tap-scale py-2 px-3 rounded-xl bg-sand-50 dark:bg-slate-900 border border-sand-200 dark:border-slate-700 text-xs font-bold text-center text-slate-700 dark:text-slate-200">
+                  Google Status
+                </a>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join("");
+
+      return `
+        <div class="bg-white dark:bg-slate-800/80 border border-sand-200 dark:border-slate-700/80 rounded-3xl p-4 shadow-xs">
+          <div class="flex items-center justify-between mb-1">
+            <h2 class="font-display font-extrabold text-base text-slate-900 dark:text-white">Upcoming Milestones (IST)</h2>
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          </div>
+          <p class="text-[11px] text-slate-500 dark:text-slate-400 mb-2">India & Sri Lanka share UTC+05:30 (no clock change needed!)</p>
+          <div>${milestonesHtml}</div>
+        </div>
+
+        ${flightCardsHtml}
+      `;
+    }
+
+    /**
+     * =========================================================================
+     * TAB 3: MULTI-CURRENCY EXPENSE SPLITTER (LKR, INR, USD -> SETTLED IN INR)
+     * =========================================================================
+     */
+    function convertToInr(amt, cur) {
+      const lkrRate = Number(state.inrToLkr) > 0 ? Number(state.inrToLkr) : 3.55; // 1 INR = 3.55 LKR
+      const usdRate = Number(state.usdToInr) > 0 ? Number(state.usdToInr) : 84.5; // 1 USD = 84.50 INR
+      if (cur === "INR") return amt;
+      if (cur === "USD") return amt * usdRate;
+      return amt / lkrRate; // LKR -> INR
+    }
+
+    function calculateInrSettlement() {
+      const paidInr = [0, 0];
+      state.expenses.forEach((item) => {
+        const valInr = convertToInr(Number(item.amt) || 0, item.cur || "LKR");
+        paidInr[item.by] += valInr;
+      });
+      const totalInr = paidInr[0] + paidInr[1];
+      const diffInr = paidInr[0] - totalInr / 2;
+      return {
+        totalInr,
+        shareInr: totalInr / 2,
+        paidInr,
+        diffInr
+      };
+    }
+
+    function renderExpensesTab() {
+      const n = state.names;
+      const calc = calculateInrSettlement();
+      const settled = Math.abs(calc.diffInr) < 0.5;
+      const settlementText = settled
+        ? "All settled up in INR! 🎉"
+        : `${esc(n[calc.diffInr > 0 ? 1 : 0])} owes ${esc(n[calc.diffInr > 0 ? 0 : 1])} ₹${Math.abs(calc.diffInr).toLocaleString("en-IN", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+
+      const listHtml = state.expenses.length
+        ? state.expenses
+            .map((x, idx) => {
+              const itemCur = x.cur || "LKR";
+              const cat = x.cat || "Food";
+              const inrEq = convertToInr(Number(x.amt) || 0, itemCur);
+              return `
+                <div class="flex items-center justify-between gap-3 py-3 ${idx > 0 ? "border-t border-sand-200 dark:border-slate-700/80" : ""}">
+                  <div class="min-w-0">
+                    <div class="flex items-center gap-1.5">
+                      <span class="text-xs px-2 py-0.5 rounded-md bg-sand-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 font-semibold">${esc(cat)}</span>
+                      <span class="font-semibold text-sm text-slate-900 dark:text-white truncate">${esc(x.desc || "Shared Expense")}</span>
+                    </div>
+                    <div class="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">Paid by <b class="text-slate-700 dark:text-slate-300">${esc(n[x.by])}</b></div>
+                  </div>
+                  <div class="flex items-center gap-2 shrink-0">
+                    <div class="text-right">
+                      <div class="font-display font-bold text-sm text-slate-900 dark:text-white">${esc(itemCur)} ${Number(x.amt).toLocaleString("en-IN", { minimumFractionDigits: 0, maximumFractionDigits: 2 })}</div>
+                      ${
+                        itemCur !== "INR"
+                          ? `<div class="text-[11px] font-semibold text-brand-600 dark:text-brand-400">≈ ₹${inrEq.toLocaleString("en-IN", { minimumFractionDigits: 0, maximumFractionDigits: 0 })}</div>`
+                          : ""
+                      }
+                    </div>
+                    <button type="button" data-del-exp="${idx}" aria-label="Delete expense" class="tap-scale w-8 h-8 rounded-full flex items-center justify-center text-rose-500 hover:bg-rose-50 dark:hover:bg-rose-950/50">
+                      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+                    </button>
+                  </div>
+                </div>
+              `;
+            })
+            .join("")
+        : `<p class="text-xs text-slate-500 dark:text-slate-400 py-3 text-center">No expenses logged yet. Add LKR, INR, or USD expenses above — everything settles in INR (₹).</p>`;
+
+      return `
+        <!-- INR Settlement Hero Card -->
+        <div class="bg-gradient-to-br from-brand-600 to-brand-700 text-white rounded-3xl p-4 shadow-md shadow-brand-600/20">
+          <div class="flex items-center justify-between gap-2">
+            <span class="text-[11px] font-bold uppercase tracking-wider text-brand-100">50/50 Settlement (All Converted to INR)</span>
+            <span class="px-2.5 py-0.5 rounded-full bg-white/20 text-[11px] font-extrabold">₹ INR</span>
+          </div>
+
+          <div class="font-display font-extrabold text-xl sm:text-2xl mt-2 tracking-tight">${settlementText}</div>
+
+          <div class="grid grid-cols-3 gap-2 mt-3 pt-3 border-t border-white/15 text-xs">
+            <div>
+              <div class="text-brand-200 text-[10px] uppercase font-bold">Total Trip</div>
+              <div class="font-bold mt-0.5">₹${calc.totalInr.toLocaleString("en-IN", { maximumFractionDigits: 0 })}</div>
+            </div>
+            <div>
+              <div class="text-brand-200 text-[10px] uppercase font-bold truncate">${esc(n[0])}</div>
+              <div class="font-bold mt-0.5">₹${calc.paidInr[0].toLocaleString("en-IN", { maximumFractionDigits: 0 })}</div>
+            </div>
+            <div>
+              <div class="text-brand-200 text-[10px] uppercase font-bold truncate">${esc(n[1])}</div>
+              <div class="font-bold mt-0.5">₹${calc.paidInr[1].toLocaleString("en-IN", { maximumFractionDigits: 0 })}</div>
+            </div>
+          </div>
+
+          <button type="button" data-share-exp class="tap-scale mt-3 w-full py-2 px-3 rounded-xl bg-white/15 hover:bg-white/25 text-white text-xs font-bold flex items-center justify-center gap-1.5">
+            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            <span>Copy WhatsApp INR Settlement Summary</span>
+          </button>
+        </div>
+
+        <!-- Add Expense Form Card (Supports LKR, INR, USD) -->
+        <div class="mt-3 bg-white dark:bg-slate-800/80 border border-sand-200 dark:border-slate-700/80 rounded-3xl p-4 shadow-xs">
+          <h3 class="font-display font-bold text-sm text-slate-900 dark:text-white mb-2.5">Log Expense (LKR, INR or USD)</h3>
+          <div class="space-y-2.5">
+            <div class="grid grid-cols-3 gap-2">
+              <input id="expDesc" type="text" placeholder="e.g. Somar Stay / Crab Dinner" class="col-span-2 px-3 py-2.5 rounded-xl text-sm bg-sand-50 dark:bg-slate-900 border border-sand-200 dark:border-slate-700 focus:outline-none focus:border-brand-600" />
+              <select id="expCat" aria-label="Category" class="px-2.5 py-2.5 rounded-xl text-xs font-semibold bg-sand-50 dark:bg-slate-900 border border-sand-200 dark:border-slate-700 focus:outline-none focus:border-brand-600">
+                <option value="Food">🍛 Food</option>
+                <option value="Transport">🚕 Cab/Tuk</option>
+                <option value="Stay">🏨 Stay</option>
+                <option value="Drinks">🍹 Drinks</option>
+                <option value="Activities">🎟️ Activity</option>
+                <option value="Shopping">🛍️ Shop</option>
+              </select>
+            </div>
+
+            <div class="grid grid-cols-3 gap-2">
+              <select id="expCur" aria-label="Expense currency" class="px-2.5 py-2.5 rounded-xl text-sm font-bold bg-sand-50 dark:bg-slate-900 border border-sand-200 dark:border-slate-700 focus:outline-none focus:border-brand-600">
+                <option value="LKR">LKR (Rs)</option>
+                <option value="INR">INR (₹)</option>
+                <option value="USD">USD ($)</option>
+              </select>
+              <input id="expAmt" type="number" inputmode="decimal" step="any" placeholder="Amount" class="col-span-2 px-3 py-2.5 rounded-xl text-sm font-bold bg-sand-50 dark:bg-slate-900 border border-sand-200 dark:border-slate-700 focus:outline-none focus:border-brand-600" />
+            </div>
+
+            <div class="grid grid-cols-3 gap-2">
+              <select id="expBy" aria-label="Paid by" class="col-span-2 px-3 py-2.5 rounded-xl text-sm font-semibold bg-sand-50 dark:bg-slate-900 border border-sand-200 dark:border-slate-700 focus:outline-none focus:border-brand-600">
+                <option value="0">Paid by ${esc(n[0])}</option>
+                <option value="1">Paid by ${esc(n[1])}</option>
+              </select>
+              <button type="button" data-add-exp class="tap-scale py-2.5 px-4 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-display font-bold text-sm">
+                + Add
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Couple Names & Exchange Rates Settings -->
+        <div class="mt-3 bg-white dark:bg-slate-800/80 border border-sand-200 dark:border-slate-700/80 rounded-3xl p-4 shadow-xs">
+          <div class="text-[11px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">Couples & Exchange Rates to INR</div>
+          <div class="grid grid-cols-2 gap-2 mb-2.5">
+            <input type="text" data-couple-name="0" value="${esc(n[0])}" aria-label="Couple 1 name" class="px-3 py-2 rounded-xl text-xs font-semibold bg-sand-50 dark:bg-slate-900 border border-sand-200 dark:border-slate-700" />
+            <input type="text" data-couple-name="1" value="${esc(n[1])}" aria-label="Couple 2 name" class="px-3 py-2 rounded-xl text-xs font-semibold bg-sand-50 dark:bg-slate-900 border border-sand-200 dark:border-slate-700" />
+          </div>
+          <div class="grid grid-cols-2 gap-2">
+            <div class="flex items-center justify-between gap-1.5 bg-sand-50 dark:bg-slate-900 border border-sand-200 dark:border-slate-700 rounded-xl px-2.5 py-2">
+              <span class="text-[11px] text-slate-600 dark:text-slate-300 font-semibold">1 INR =</span>
+              <div class="flex items-center gap-1">
+                <input type="number" step="0.01" data-rate-lkr value="${esc(state.inrToLkr)}" aria-label="INR to LKR rate" class="w-16 text-right font-bold text-xs bg-white dark:bg-slate-800 border border-sand-200 dark:border-slate-700 rounded-lg px-1.5 py-1" />
+                <span class="text-[11px] font-bold text-slate-500">LKR</span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between gap-1.5 bg-sand-50 dark:bg-slate-900 border border-sand-200 dark:border-slate-700 rounded-xl px-2.5 py-2">
+              <span class="text-[11px] text-slate-600 dark:text-slate-300 font-semibold">1 USD =</span>
+              <div class="flex items-center gap-1">
+                <input type="number" step="0.1" data-rate-usd value="${esc(state.usdToInr)}" aria-label="USD to INR rate" class="w-16 text-right font-bold text-xs bg-white dark:bg-slate-800 border border-sand-200 dark:border-slate-700 rounded-lg px-1.5 py-1" />
+                <span class="text-[11px] font-bold text-slate-500">INR</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Itemized Ledger -->
+        <div class="mt-3 bg-white dark:bg-slate-800/80 border border-sand-200 dark:border-slate-700/80 rounded-3xl p-4 shadow-xs">
+          <div class="flex items-center justify-between mb-1">
+            <h3 class="font-display font-bold text-sm text-slate-900 dark:text-white">Expense History (${state.expenses.length})</h3>
+            <span class="text-[11px] text-slate-400">Each couple share: ₹${calc.shareInr.toLocaleString("en-IN", { maximumFractionDigits: 0 })}</span>
+          </div>
+          <div>${listHtml}</div>
+        </div>
+      `;
+    }
+
+    /**
+     * =========================================================================
+     * TAB 4: SHORTLIST SUMMARY, PACKING CHECKLIST & JSON SYNC
+     * =========================================================================
+     */
+    function renderToolsTab() {
+      const doneCount = state.checklist.filter((c) => c.done).length;
+      const totalCount = state.checklist.length;
+      const pct = totalCount ? Math.round((doneCount / totalCount) * 100) : 0;
+
+      // Day-wise Shortlisted Itinerary Summary
+      const shortlistSummaryHtml = DAYS_DATA.map((d, dIdx) => {
+        const picked = d.items.filter((x) => state.shortlist[x.id]);
+        return `
+          <div class="py-2.5 ${dIdx > 0 ? "border-t border-sand-200/80 dark:border-slate-700/80" : ""}">
+            <div class="flex items-center justify-between mb-1">
+              <span class="font-display font-bold text-xs text-brand-600 dark:text-brand-400">${esc(d.title)}</span>
+              <span class="text-[11px] font-semibold text-slate-400">${picked.length} places</span>
+            </div>
+            <div class="flex flex-wrap gap-1.5">
+              ${
+                picked.length
+                  ? picked
+                      .map(
+                        (p) =>
+                          `<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-lg text-[11px] font-medium bg-sand-100 dark:bg-slate-700/80 text-slate-800 dark:text-slate-100">${p.tier === "alt_party" ? "🪩" : p.tier === "alt_food" ? "🍽️" : "📍"} ${esc(p.name)}</span>`
+                      )
+                      .join("")
+                  : `<span class="text-xs text-slate-400 italic">No places picked yet</span>`
+              }
+            </div>
+          </div>
+        `;
+      }).join("");
+
+      const checklistHtml = state.checklist
+        .map(
+          (item, idx) => `
+          <label class="flex items-start gap-3 py-2.5 cursor-pointer select-none ${idx > 0 ? "border-t border-sand-200/80 dark:border-slate-700/80" : ""}">
+            <input type="checkbox" data-check-idx="${idx}" ${item.done ? "checked" : ""}
+              class="mt-0.5 w-4 h-4 rounded accent-brand-600 cursor-pointer shrink-0" />
+            <div class="flex-1 min-w-0">
+              <span class="text-sm leading-snug ${item.done ? "line-through text-slate-400 dark:text-slate-500" : "text-slate-800 dark:text-slate-100 font-medium"}">
+                ${esc(item.text)}
+              </span>
+              <span class="ml-1.5 text-[10px] font-bold uppercase tracking-wider text-slate-400">${esc(item.cat)}</span>
+            </div>
+          </label>
+        `
+        )
+        .join("");
+
+      return `
+        <!-- Your Shortlisted Places Across All 6 Days -->
+        <div class="bg-white dark:bg-slate-800/80 border border-sand-200 dark:border-slate-700/80 rounded-3xl p-4 shadow-xs">
+          <div class="flex items-center justify-between mb-1">
+            <h2 class="font-display font-extrabold text-base text-slate-900 dark:text-white">Your Shortlisted Places</h2>
+            <button type="button" data-copy-shortlist class="tap-scale px-2.5 py-1 rounded-xl bg-brand-50 dark:bg-brand-900/60 text-brand-700 dark:text-brand-200 text-xs font-bold">
+              Copy Plan
+            </button>
+          </div>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mb-2">Toggle places in the Itinerary tab to customize your group plan.</p>
+          <div>${shortlistSummaryHtml}</div>
+        </div>
+
+        <!-- Packing & Pre-Trip Checklist -->
+        <div class="mt-3 bg-white dark:bg-slate-800/80 border border-sand-200 dark:border-slate-700/80 rounded-3xl p-4 shadow-xs">
+          <div class="flex items-center justify-between mb-2">
+            <div>
+              <h2 class="font-display font-extrabold text-base text-slate-900 dark:text-white">Pre-Trip & Packing Checklist</h2>
+              <p class="text-xs text-slate-500 dark:text-slate-400">${doneCount} of ${totalCount} ready (${pct}%)</p>
+            </div>
+            <span class="px-2.5 py-1 rounded-full text-xs font-extrabold bg-brand-50 text-brand-700 dark:bg-brand-900/60 dark:text-brand-200">${pct}%</span>
+          </div>
+
+          <div class="w-full h-2 rounded-full bg-sand-100 dark:bg-slate-700 overflow-hidden mb-3">
+            <div class="h-full bg-brand-600 transition-all duration-300" style="width: ${pct}%"></div>
+          </div>
+
+          <div>${checklistHtml}</div>
+
+          <div class="mt-3 pt-3 border-t border-sand-200 dark:border-slate-700 flex gap-2">
+            <input id="newCheckText" type="text" placeholder="Add custom packing item…"
+              class="flex-1 px-3 py-2 rounded-xl text-xs bg-sand-50 dark:bg-slate-900 border border-sand-200 dark:border-slate-700 focus:outline-none focus:border-brand-600" />
+            <button type="button" data-add-check class="tap-scale px-3.5 py-2 rounded-xl bg-brand-600 text-white text-xs font-bold shrink-0">Add</button>
+          </div>
+        </div>
+
+        <!-- Emergency & Base Quick Actions -->
+        <div class="mt-3 bg-white dark:bg-slate-800/80 border border-sand-200 dark:border-slate-700/80 rounded-3xl p-4 shadow-xs">
+          <h3 class="font-display font-bold text-sm text-slate-900 dark:text-white mb-2.5">Emergency & Offline Base Navigation</h3>
+          <div class="grid grid-cols-2 gap-2">
+            <a href="tel:1912" class="tap-scale p-3 rounded-2xl bg-rose-50 dark:bg-rose-950/40 border border-rose-200 dark:border-rose-800/70">
+              <div class="text-[10px] font-bold uppercase text-rose-600 dark:text-rose-400">Tourist Police</div>
+              <div class="font-display font-extrabold text-lg text-rose-900 dark:text-rose-200">1912</div>
+            </a>
+            <a href="tel:119" class="tap-scale p-3 rounded-2xl bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800/70">
+              <div class="text-[10px] font-bold uppercase text-amber-700 dark:text-amber-400">Emergency / Police</div>
+              <div class="font-display font-extrabold text-lg text-amber-900 dark:text-amber-200">119</div>
+            </a>
+          </div>
+          <a href="${gmapsPlaceUrl(SOMAR, 5.968, 80.364)}" target="_blank" rel="noopener" class="tap-scale mt-2.5 w-full py-2.5 px-3.5 rounded-2xl bg-sand-100 dark:bg-slate-700/80 text-slate-800 dark:text-slate-100 text-xs font-bold flex items-center justify-between">
+            <span>🏠 Navigate to Base: Somar Ahangama</span>
+            <span>Offline Maps →</span>
+          </a>
+        </div>
+
+        <!-- Share & Sync Trip Data (Ankit Jeenat <-> Laxit Sayali) -->
+        <div class="mt-3 bg-white dark:bg-slate-800/80 border border-sand-200 dark:border-slate-700/80 rounded-3xl p-4 shadow-xs">
+          <h3 class="font-display font-bold text-sm text-slate-900 dark:text-white">Share & Sync Between Couples</h3>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5 mb-3">
+            Export your shortlisted places, notes, and INR/LKR/USD expenses as a file to share between <b>${esc(state.names[0])}</b> and <b>${esc(state.names[1])}</b> on WhatsApp.
+          </p>
+          <div class="grid grid-cols-2 gap-2">
+            <button type="button" data-export-json class="tap-scale py-2.5 px-3 rounded-xl bg-brand-600 text-white text-xs font-bold">
+              Export Trip JSON
+            </button>
+            <label class="tap-scale py-2.5 px-3 rounded-xl bg-sand-100 dark:bg-slate-700 text-slate-800 dark:text-slate-100 text-xs font-bold text-center cursor-pointer">
+              Import Trip JSON
+              <input type="file" id="importJsonFile" accept=".json,application/json" class="hidden" />
+            </label>
+          </div>
+        </div>
+      `;
+    }
+
+    /**
+     * =========================================================================
+     * MAIN RENDER LOOP & EVENT HANDLERS
+     * =========================================================================
+     */
+    function render() {
+      document.querySelectorAll(".nav-btn").forEach((btn) => {
+        const isActive = btn.dataset.tab === state.tab;
+        btn.classList.toggle("text-brand-600", isActive);
+        btn.classList.toggle("dark:text-brand-400", isActive);
+        btn.classList.toggle("text-slate-500", !isActive);
+        btn.classList.toggle("dark:text-slate-400", !isActive);
+        const pill = btn.querySelector(".nav-pill");
+        if (pill) {
+          pill.classList.toggle("bg-brand-100", isActive);
+          pill.classList.toggle("dark:bg-brand-900/60", isActive);
+        }
+      });
+
+      const app = $("app");
+      if (state.tab === "plan") app.innerHTML = renderItineraryTab();
+      else if (state.tab === "fly") app.innerHTML = renderFlightsTab();
+      else if (state.tab === "money") app.innerHTML = renderExpensesTab();
+      else app.innerHTML = renderToolsTab();
+    }
+
+    $("themeBtn").addEventListener("click", () => {
+      const order = ["system", "light", "dark"];
+      state.theme = order[(order.indexOf(state.theme) + 1) % order.length];
+      store.set("theme", state.theme);
+      applyTheme();
+    });
+
+    document.addEventListener("click", (ev) => {
+      const btn = ev.target.closest("[data-tab], [data-day], [data-filter-shortlist], [data-copy], [data-add-exp], [data-del-exp], [data-share-exp], [data-copy-shortlist], [data-add-check], [data-export-json]");
+      if (!btn) return;
+
+      if (btn.dataset.tab) {
+        state.tab = btn.dataset.tab;
+        render();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      } else if (btn.dataset.day !== undefined) {
+        state.day = Number(btn.dataset.day);
+        render();
+      } else if (btn.dataset.filterShortlist !== undefined) {
+        state.onlyShortlisted = btn.dataset.filterShortlist === "1";
+        store.set("only_shortlisted", state.onlyShortlisted);
+        render();
+      } else if (btn.dataset.copy) {
+        copyText(btn.dataset.copy, btn.dataset.copyMsg || "Copied!");
+      } else if ("addExp" in btn.dataset) {
+        const amt = parseFloat($("expAmt").value);
+        if (!(amt > 0)) {
+          showToast("Please enter a valid amount");
+          return;
+        }
+        const desc = $("expDesc").value.trim() || "Shared Expense";
+        const cat = $("expCat").value;
+        const cur = $("expCur").value;
+        const by = Number($("expBy").value);
+        state.expenses.unshift({ desc, cat, cur, amt, by });
+        store.set("exp", state.expenses);
+        render();
+        const inrVal = convertToInr(amt, cur);
+        showToast(`Added ${cur} ${amt} (≈ ₹${Math.round(inrVal)})`);
+      } else if (btn.dataset.delExp !== undefined) {
+        state.expenses.splice(Number(btn.dataset.delExp), 1);
+        store.set("exp", state.expenses);
+        render();
+        showToast("Expense removed");
+      } else if ("shareExp" in btn.dataset) {
+        const calc = calculateInrSettlement();
+        const n = state.names;
+        const settled = Math.abs(calc.diffInr) < 0.5;
+        const settleLine = settled
+          ? "All settled up in INR!"
+          : `${n[calc.diffInr > 0 ? 1 : 0]} owes ${n[calc.diffInr > 0 ? 0 : 1]} ₹${Math.abs(calc.diffInr).toFixed(2)}`;
+        const summary = [
+          `🌴 *Sri Lanka Trip Expenses (12–17 Dec)*`,
+          `Rates: 1 INR = ${state.inrToLkr} LKR | 1 USD = ₹${state.usdToInr}`,
+          `Total Trip: ₹${calc.totalInr.toFixed(2)}`,
+          `• ${n[0]} paid: ₹${calc.paidInr[0].toFixed(2)}`,
+          `• ${n[1]} paid: ₹${calc.paidInr[1].toFixed(2)}`,
+          `👉 *${settleLine}*`
+        ].join("\n");
+        copyText(summary, "INR WhatsApp summary copied!");
+      } else if ("copyShortlist" in btn.dataset) {
+        const lines = [`🌴 *Sri Lanka Shortlisted Itinerary (12–17 Dec)*`];
+        DAYS_DATA.forEach((d) => {
+          const picked = d.items.filter((x) => state.shortlist[x.id]);
+          lines.push(`\n*${d.title}*`);
+          picked.forEach((p, idx) => lines.push(`${idx + 1}. ${p.name}`));
+        });
+        copyText(lines.join("\n"), "Shortlisted itinerary copied!");
+      } else if ("addCheck" in btn.dataset) {
+        const txt = $("newCheckText").value.trim();
+        if (!txt) return;
+        state.checklist.push({ id: "c_" + Date.now(), cat: "Custom", text: txt, done: false });
+        store.set("checklist", state.checklist);
+        render();
+        showToast("Added to checklist");
+      } else if ("exportJson" in btn.dataset) {
+        const payload = {
+          exportedAt: new Date().toISOString(),
+          shortlist: state.shortlist,
+          notes: state.notes,
+          flightTimes: state.flightTimes,
+          hotelName: state.hotelName,
+          names: state.names,
+          inrToLkr: state.inrToLkr,
+          usdToInr: state.usdToInr,
+          expenses: state.expenses,
+          checklist: state.checklist
+        };
+        const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "sri-lanka-trip-ankit-laxit.json";
+        a.click();
+        URL.revokeObjectURL(url);
+        showToast("Trip backup JSON downloaded");
+      }
+    });
+
+    document.addEventListener("input", (ev) => {
+      const t = ev.target;
+      if (t.dataset.noteDay !== undefined) {
+        state.notes[t.dataset.noteDay] = t.value;
+        store.set("notes", state.notes);
+      } else if (t.dataset.ft !== undefined) {
+        state.flightTimes[t.dataset.ft] = t.value;
+        store.set("ft", state.flightTimes);
+      } else if (t.id === "hotelInput") {
+        state.hotelName = t.value;
+        store.set("hotel_name", state.hotelName);
+      }
+    });
+
+    document.addEventListener("change", (ev) => {
+      const t = ev.target;
+      if (t.dataset.shortlistId !== undefined) {
+        const id = t.dataset.shortlistId;
+        state.shortlist[id] = t.checked;
+        store.set("shortlist", state.shortlist);
+        render();
+        showToast(t.checked ? "Added to shortlist" : "Removed from shortlist");
+      } else if (t.dataset.coupleName !== undefined) {
+        const idx = Number(t.dataset.coupleName);
+        state.names[idx] = t.value.trim() || (idx === 0 ? "Ankit Jeenat" : "Laxit Sayali");
+        store.set("names", state.names);
+        render();
+      } else if ("rateLkr" in t.dataset) {
+        const r = parseFloat(t.value);
+        if (r > 0) {
+          state.inrToLkr = r;
+          store.set("inr_to_lkr", state.inrToLkr);
+          render();
+        }
+      } else if ("rateUsd" in t.dataset) {
+        const r = parseFloat(t.value);
+        if (r > 0) {
+          state.usdToInr = r;
+          store.set("usd_to_inr", state.usdToInr);
+          render();
+        }
+      } else if (t.dataset.checkIdx !== undefined) {
+        const idx = Number(t.dataset.checkIdx);
+        state.checklist[idx].done = t.checked;
+        store.set("checklist", state.checklist);
+        render();
+      } else if (t.id === "importJsonFile" && t.files && t.files[0]) {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          try {
+            const data = JSON.parse(e.target.result);
+            if (data.shortlist) { state.shortlist = { ...state.shortlist, ...data.shortlist }; store.set("shortlist", state.shortlist); }
+            if (data.notes) { state.notes = data.notes; store.set("notes", state.notes); }
+            if (data.flightTimes) { state.flightTimes = data.flightTimes; store.set("ft", state.flightTimes); }
+            if (data.hotelName) { state.hotelName = data.hotelName; store.set("hotel_name", state.hotelName); }
+            if (Array.isArray(data.names)) { state.names = data.names; store.set("names", state.names); }
+            if (data.inrToLkr) { state.inrToLkr = data.inrToLkr; store.set("inr_to_lkr", state.inrToLkr); }
+            if (data.usdToInr) { state.usdToInr = data.usdToInr; store.set("usd_to_inr", state.usdToInr); }
+            if (Array.isArray(data.expenses)) { state.expenses = data.expenses; store.set("exp", state.expenses); }
+            if (Array.isArray(data.checklist)) { state.checklist = data.checklist; store.set("checklist", state.checklist); }
+            render();
+            showToast("Trip data imported!");
+          } catch (err) {
+            showToast("Invalid backup JSON file");
+          }
+        };
+        reader.readAsText(t.files[0]);
+      }
+    });
+
+    applyTheme();
+    render();
+  </script>
+</body>
+</html>
+```
